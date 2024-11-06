@@ -1,0 +1,66 @@
+---
+import ThemeIcons from "./ThemeIcons.astro";
+import SpainIcon from "../../src/icons/SpainIcon";
+import UnitedkingdomIcon from "../../src/icons/UnitedkingdomIcon.jsx";
+
+const buttonTransition =
+  "transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:scale-125 hover:font-semibold";
+
+const primaryNavItems = [
+  {
+    title: "Inicio",
+    url: "/#inicio",
+    class: buttonTransition,
+  },
+  {
+    title: "Proyectos",
+    url: "/#proyectos",
+    class: buttonTransition,
+  },
+  {
+    title: "Sobre mí",
+    url: "/#sobre-mi",
+    class: buttonTransition,
+  },
+  {
+    title: "Habilidades",
+    url: "/#habilidades",
+    class: buttonTransition,
+  },
+];
+
+const secondaryNavItems = [
+  {
+    logo: SpainIcon,
+    url: "/",
+    label:'Cambiar idioma a Español.'
+  },
+  {
+    logo: UnitedkingdomIcon,
+    url: "/en",
+    label:'Cambiar idioma a Inglés.'
+  },
+];
+---
+
+<nav
+  class="nav-links w-full flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-slate-950 bg-stone-200"
+>
+  <div
+    class="divide-y-2 divide-gray-500 dark:divide-y-2 dark:divide-slate-100/40"
+  >
+    <div class="flex justify-evenly items-center text-md py-2">
+      {
+        primaryNavItems.map((link) => (
+          <a class={link.class} href={link.url}>
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex justify-end items-center gap-x-2 pr-6 py-2">
+      {secondaryNavItems.map((link) => <a aria-label={link.label} href={link.url}>{<link.logo />}</a>)}
+      <ThemeIcons />
+    </div>
+  </div>
+</nav>
