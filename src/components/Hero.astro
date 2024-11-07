@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import meImage from "../../src/images/me.webp";
+import Badge from "../components/Badge.astro";
+import ResumeIcon from "../icons/ResumeIcon";
+import EmailIcon from "../icons/EmailIcon";
+import CopyIcon from "../icons/CopyIcon";
+---
+
+<div class="flex justify-start items-center gap-x-4 mb-10 lg:pt-8">
+  <Image
+    loading="eager"
+    class="rounded-full size-16"
+    src={meImage}
+    alt="Carlos Pulido"
+  />
+  <Badge
+    ><a
+      href="https://www.linkedin.com/in/carlosfrontend/"
+      rel="noopener noreferrer"
+      target="_blank">Disponible para trabajar</a
+    ></Badge
+  >
+</div>
+<h1 class="dark:text-slate-300 text-slate-800 dark:text-3xl text-3xl pb-8">
+  Hey! 👋, soy <br /><strong
+    class="bg-clip-text text-transparent bg-gradient-to-r dark:from-sky-400 dark:to-sky-600 from-slate-800 to-slate-700"
+    >Carlos Pulido</strong
+  >
+</h1>
+
+<p
+  class="text-pretty font-semibold dark:text-slate-300 text-gray-500/90 max-w-md py-1 text-xl"
+>
+  Un <strong class="dark:text-yellow-200 text-slate-700 font-bold"
+    >Desarrollador Front-End</strong
+  > de Madrid, España 🇪🇸.
+</p>
+
+<p
+  class="font-semibold dark:text-slate-300 text-gray-500/90 max-w-md py-1 text-xl"
+>
+  LLevo ➕ de un año 📅 formándome con el plan de estudios <a
+    class="text-sky-600 border-b-2 border-b-sky-600 hover:border-b-sky-500 hover:text-sky-500"
+    href="https://www.theodinproject.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    The Odin Project.</a
+  >
+</p>
+<p
+  class="font-semibold dark:text-slate-300 text-gray-500/90 max-w-md py-1 text-xl"
+>
+  Desde aquí 👇 puedes:
+</p>
+<a
+  class="dark:bg-slate-800 flex w-60 gap-3 justify-center rounded-full p-2 mt-8 border-2 border-sky-400 dark:text-slate-300"
+  href="/resume.pdf"
+  target="_blank"><ResumeIcon />Ver mi Currículum</a
+>
+<a
+  class="dark:bg-slate-800 flex w-60 gap-3 justify-center rounded-full p-2 mt-8 border-2 border-amber-400 dark:text-slate-300"
+  href="mailto:carlosfrontend@hotmail.com"><EmailIcon />Mandarme un correo</a
+>
+<a
+  class="dark:bg-slate-800 flex w-60 gap-3 justify-center rounded-full p-2 mt-8 border-2 border-indigo-400 dark:text-slate-300"
+  href="/resume.pdf"
+  target="_blank"><CopyIcon />Copiar mi correo</a
+>

@@ -1,11 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout title="Porfolio de Carlos Pulido - Desarrolloador Front-End.">
+<Layout
+  title="Porfolio de Carlos Pulido Desarrollador y Programador Web."
+  description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
+>
   <Header />
-  <main class="relative top-40 h-svh w-12/12">
-    <h1 class="text-[#363637] dark:text-slate-100">Hola que ases?</h1>
+
+</div>
+  <main
+    class="rounded-md relative w-12/12 xs:mx-auto md:flex md:flex-col md:px-48 lg:block dark:lg:w-6/12 lg:w-6/12 lg:mx-auto px-4 h-auto  dark:w-screen dark:bg-slate-950 lg:px-8 dark:lg:top-40 top-40 dark:lg:px-8 bg-transparent dark:bg-transparent"
+  >
+    <Hero />
   </main>
 </Layout>

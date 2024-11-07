@@ -32,18 +32,19 @@ const secondaryNavItems = [
   {
     logo: SpainIcon,
     url: "/",
-    label:"Change the language to Spanish"
+    label: "Change the language to Spanish",
   },
   {
     logo: UnitedkingdomIcon,
     url: "/en",
-    label:"Change the language to English"
+    label: "Change the language to English",
   },
 ];
 ---
 
 <nav
-  class="nav-links w-full flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-slate-950 bg-stone-200"
+  class="nav-links w-full flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-slate-950 bg-stone-200
+  md:w-full md:text-1xl rounded-md md:h-auto lg:mt-6 md:mx-auto lg:w-6/12 lg:mx-auto"
 >
   <div
     class="divide-y-2 divide-gray-500 dark:divide-y-2 dark:divide-slate-100/40"
@@ -58,7 +59,13 @@ const secondaryNavItems = [
       }
     </div>
     <div class="flex justify-end items-center gap-x-2 pr-6 py-2">
-      {secondaryNavItems.map((link) => <a aria-label={link.label} href={link.url}>{<link.logo />}</a>)}
+      {
+        secondaryNavItems.map((link) => (
+          <a aria-label={link.label} href={link.url}>
+            {<link.logo />}
+          </a>
+        ))
+      }
       <ThemeIcons />
     </div>
   </div>

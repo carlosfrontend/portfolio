@@ -21,7 +21,8 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions/>
   </head>
-  <body class="dark:bg-slate-900">
+  <div class="dark:absolute dark:top-0 z-[-2] dark:h-screen dark:w-screen dark:bg-slate-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+
     <slot />
   </body>
 </html>
@@ -49,9 +50,9 @@ const { title } = Astro.props;
     }
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: light) {
     body {
-      color: rgb(71 85 105 / 0.8);
+     /*  color: rgb(71 85 105 / 0.8); */
 	  min-height: 100svh;
     }
   }
