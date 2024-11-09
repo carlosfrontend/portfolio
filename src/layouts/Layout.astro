@@ -2,6 +2,10 @@
 // Supports weights 100-900
 import "@fontsource-variable/inter";
 import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Navigation from "../components/Navigation.astro";
 
 interface Props {
   title: string;
@@ -21,48 +25,49 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
-  <div
-    class="dark:absolute dark:top-0 z-[-2] dark:h-screen dark:w-screen dark:bg-slate-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-  >
-  </div>
-  <body class="bg-slate-900">
+
+  <body>
+    <Navigation/>
+    <Header/>
     <slot />
+    <Footer />
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+      html {
+        font-family: "Inter Variable", system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+
+      html,
+      body {
+        min-height: 100vh;
+        width: 100%;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      
+
+      @media (prefers-color-scheme: dark) {
+        .dark body {
+          background: rgb(7, 7, 9);
+          background-image: linear-gradient(
+            90deg,
+            rgba(7, 7, 9, 1) 0%,
+            rgba(25, 21, 98, 1) 100%
+          );
+        }
+
+        body {
+          background-color: #f8f8f9; /** light background **/
+        }
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-  html {
-    font-family: "Inter Variable", system-ui, sans-serif;
-    background-color: #f8f8f9;
-    overflow-x: hidden;
-    min-height: 100svh;
-  }
-
-  body {
-    min-height: 100svh;
-  }
-
-  html.dark {
-    color: #ffffffe9;
-  }
-
-  .dark .nav-links a {
-    color: #e4e4dcdc;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      color: rgb(71 85 105 / 0.8);
-    }
-  }
-</style>

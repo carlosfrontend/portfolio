@@ -1,7 +1,23 @@
 ---
-import Navigation from "./Navigation.astro";
+import { Image } from "astro:assets";
+import Badge from "./Badge.astro";
+import meImage from "../../src/images/me.webp";
 ---
 
-<header class="fixed w-full z-20">
-    <Navigation />
+<header
+  class="relative px-8 top-32 flex justify-start items-center gap-x-4 pb-10"
+>
+  <Image
+    loading="eager"
+    class="rounded-full size-16"
+    src={meImage}
+    alt="Carlos Pulido"
+  />
+  <Badge
+    ><a
+      href="https://www.linkedin.com/in/carlosfrontend/"
+      rel="noopener noreferrer"
+      target="_blank">Disponible para trabajar</a
+    >
+  </Badge>
 </header>

@@ -1,0 +1,19 @@
+#themeToggle {
+  border: 0;
+  background: none;
+  display: flex;
+  align-self: stretch;
+}
+.sun {
+  fill: #464b4c;
+}
+.moon {
+  fill: transparent;
+}
+
+.dark .sun {
+  fill: transparent;
+}
+.dark .moon {
+  fill: #e4e4dcdc;
+}
