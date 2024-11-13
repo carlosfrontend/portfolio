@@ -1,10 +1,8 @@
 ---
 // Supports weights 100-900
 import "@fontsource-variable/inter";
-import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
 import Navigation from "../components/Navigation.astro";
 
 interface Props {
@@ -28,46 +26,51 @@ const { title, description } = Astro.props;
   </head>
 
   <body>
-    <Navigation/>
-    <Header/>
+    <Navigation />
+    <Header id="inicio" />
     <slot />
     <Footer />
-    <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
-      html {
-        font-family: "Inter Variable", system-ui, sans-serif;
-        overflow-x: hidden;
-      }
-
-      html,
-      body {
-        min-height: 100vh;
-        width: 100%;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-      
-
-      @media (prefers-color-scheme: dark) {
-        .dark body {
-          background: rgb(7, 7, 9);
-          background-image: linear-gradient(
-            90deg,
-            rgba(7, 7, 9, 1) 0%,
-            rgba(25, 21, 98, 1) 100%
-          );
-        }
-
-        body {
-          background-color: #f8f8f9; /** light background **/
-        }
-      }
-    </style>
   </body>
+  <style is:global>
+    :root {
+      color-scheme: light dark;
+    }
+    html {
+      font-family: "Inter Variable", system-ui, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body{
+      min-height: 100vh;
+      overscroll-behavior: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .dark body {
+        background: rgb(7, 7, 9);
+        background-image: linear-gradient(
+          90deg,
+          rgba(7, 7, 9, 1) 0%,
+          rgba(25, 21, 98, 1) 100%
+        );
+      }
+
+      body {
+        background-color: #f8f8f9; /** light background **/
+      }
+    }
+  </style>
 </html>

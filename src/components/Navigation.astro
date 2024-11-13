@@ -9,22 +9,22 @@ const buttonTransition =
 const primaryNavItems = [
   {
     title: "Inicio",
-    url: "/#inicio",
+    url: "#inicio",
     class: buttonTransition,
   },
   {
     title: "Proyectos",
-    url: "/#proyectos",
+    url: "#proyectos",
     class: buttonTransition,
   },
   {
     title: "Sobre mí",
-    url: "/#sobre-mi",
+    url: "#sobre-mi",
     class: buttonTransition,
   },
   {
     title: "Habilidades",
-    url: "/#habilidades",
+    url: "#habilidades",
     class: buttonTransition,
   },
 ];
@@ -59,7 +59,7 @@ const secondaryNavItems = [
       }
     </div>
     <div class="flex justify-end items-center gap-x-2 pr-6 py-2">
-      {secondaryNavItems.map((link) => <a aria-label={link.label} href={link.url}>{<link.logo />}</a>)}
+      {secondaryNavItems.map((link) => <a class= 'flex gap-x-1 items-center' aria-label={link.label} href={link.url}><span class="text-xs">{link.url === '/en' ? 'EN' : 'ES'}</span>{<link.logo />}</a>)}
       <ThemeIcons client:load />
     </div>
   </div>

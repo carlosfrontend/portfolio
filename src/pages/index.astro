@@ -9,9 +9,18 @@ import SectionContainer from "../components/SectionContainer.astro";
   title="Porfolio de Carlos Pulido Desarrollador y Programador Web."
   description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
 >
-  <main class="h-screen w-full">
-    <SectionContainer id="#inicio">
+  <main class="relative pt-4 w-full">
+    <SectionContainer className='pt-10'> <!--distance from header -->
       <Hero />
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      Proyectos
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      Sobre mi
+    </SectionContainer>
+    <SectionContainer id="habilidades">
+      Habilidades
     </SectionContainer>
   </main>
 </Layout>
