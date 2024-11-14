@@ -1,8 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-
 import SectionContainer from "../components/SectionContainer.astro";
+import { projects } from "../components/data/projects.json";
+import CardProject from "../components/CardProject.astro";
+import ProjectsIcon from "../components/ProjectsIcon.astro";
+
+const sections = [
+  { id: "proyectos", name: "Proyectos", icon: ProjectsIcon },
+  { id: "sobre-mi", name: "Sobre mí", icon: ProjectsIcon },
+  { id: "habilidades", name: "Habilidades", icon: ProjectsIcon },
+];
 ---
 
 <Layout
@@ -10,17 +18,95 @@ import SectionContainer from "../components/SectionContainer.astro";
   description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
 >
   <main class="relative pt-4 w-full">
-    <SectionContainer className='pt-10'> <!--distance from header -->
+    <SectionContainer className="pt-10">
+      <!--distance from header -->
       <Hero />
     </SectionContainer>
-    <SectionContainer id="proyectos">
-      Proyectos
-    </SectionContainer>
-    <SectionContainer id="sobre-mi">
-      Sobre mi
-    </SectionContainer>
-    <SectionContainer id="habilidades">
-      Habilidades
-    </SectionContainer>
+
+    {
+      sections.map((section) => (
+        <SectionContainer id={section.id}>
+          {section.name === "Proyectos" ? (
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+              <span>
+                <svg
+                  class="size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 8l-4 4l4 4" />
+                  <path d="M17 8l4 4l-4 4" />
+                  <path d="M14 4l-4 16" />
+                </svg>
+              </span>
+              {section.name}
+            </h3>
+          ) : section.name === "Sobre mí" ? (
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+              <span>
+                <svg
+                  class="size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+                  <path d="M15 19l2 2l4 -4" />
+                </svg>
+              </span>
+              {section.name}
+            </h3>
+          ) : (
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+              <span>
+                <svg
+                  class="size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-tools"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" />
+                  <path d="M14.5 5.5l4 4" />
+                  <path d="M12 8l-5 -5l-4 4l5 5" />
+                  <path d="M7 8l-1.5 1.5" />
+                  <path d="M16 12l5 5l-4 4l-5 -5" />
+                  <path d="M16 17l-1.5 1.5" />
+                </svg>
+              </span>
+              {section.name}
+            </h3>
+          )}
+
+          {section.name === "Proyectos" &&
+            projects.slice(0,3).map((project) => (
+              <CardProject
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                loading={project.loading}
+                codeLink={project.codeLink}
+                liveLink={project.liveLink}
+                tags={project.tags}
+              />
+            ))}
+           {section.name === 'Proyectos' &&  <a href="/proyectos" class="flex h-10 items-center justify-center dark:bg-sky-800 dark:text-slate-100 rounded-sm w-36 px-2" href="">Ver más</a>}
+        </SectionContainer>
+      ))
+    }
   </main>
 </Layout>
