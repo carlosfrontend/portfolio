@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import { projects } from "../components/data/projects.json";
+import { projects } from "../components/data/projects.js";
 import CardProject from "../components/CardProject.astro";
 import ProjectsIcon from "../components/ProjectsIcon.astro";
 
@@ -11,6 +11,8 @@ const sections = [
   { id: "sobre-mi", name: "Sobre mí", icon: ProjectsIcon },
   { id: "habilidades", name: "Habilidades", icon: ProjectsIcon },
 ];
+
+const PROJECTS = projects();
 ---
 
 <Layout
@@ -27,7 +29,7 @@ const sections = [
       sections.map((section) => (
         <SectionContainer id={section.id}>
           {section.name === "Proyectos" ? (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14 font-bold dark:text-white text-slate-800">
               <span>
                 <svg
                   class="size-8"
@@ -47,7 +49,7 @@ const sections = [
               {section.name}
             </h3>
           ) : section.name === "Sobre mí" ? (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14 font-bold dark:text-white text-slate-800">
               <span>
                 <svg
                   class="size-8"
@@ -67,7 +69,7 @@ const sections = [
               {section.name}
             </h3>
           ) : (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-14">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14 font-bold dark:text-white text-slate-800">
               <span>
                 <svg
                   class="size-8"
@@ -93,18 +95,26 @@ const sections = [
           )}
 
           {section.name === "Proyectos" &&
-            projects.slice(0,3).map((project) => (
+            PROJECTS.slice(0, 3).map((project) => (
               <CardProject
                 title={project.title}
                 description={project.description}
-                imageUrl={project.imageUrl}
+                image={project.image}
                 loading={project.loading}
                 codeLink={project.codeLink}
                 liveLink={project.liveLink}
                 tags={project.tags}
               />
             ))}
-           {section.name === 'Proyectos' &&  <a href="/proyectos" class="flex h-10 items-center justify-center dark:bg-sky-800 dark:text-slate-100 rounded-sm w-36 px-2" href="">Ver más</a>}
+          {section.name === "Proyectos" && (
+            <a
+              href="/proyectos"
+              class="flex h-10 items-center justify-center dark:bg-sky-800 dark:text-slate-100 rounded-sm w-36 px-2"
+              href=""
+            >
+              Ver más
+            </a>
+          )}
         </SectionContainer>
       ))
     }
