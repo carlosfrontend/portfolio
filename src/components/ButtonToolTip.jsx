@@ -2,10 +2,12 @@ import CopyIcon from "../icons/CopyIcon";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useTranslations } from "../i18n/utils";
 
-const ButtonToast = () => {
+const ButtonToast = ({ currentLang }) => {
+
+  const translateLabels = useTranslations(currentLang);
   const [email, setEmail] = useState("");
-
   useEffect(() => {
     const email = document.querySelector("#email").value;
     setEmail(email);
@@ -18,7 +20,7 @@ const ButtonToast = () => {
         <button
           onClick={() => {
             const theme = localStorage.getItem("theme");
-            toast("Correo Copiado!", {
+            toast(translateLabels('hero.copyEmail.ToastMessage'), {
               duration: 2000,
               icon: "☑️",
               style: {
@@ -36,7 +38,7 @@ const ButtonToast = () => {
           <span>
             <CopyIcon />
           </span>
-          Copiar mi correo
+          {translateLabels('hero.copyEmail')}
         </button>
       </CopyToClipboard>
     </div>

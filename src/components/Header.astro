@@ -2,11 +2,19 @@
 import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
 import meImage from "../../src/images/me.webp";
+import { useTranslations } from "../i18n/utils";
+import type { languageList } from "../i18n/ui";
+
+const currentLang = Astro.currentLocale || "es";
+
+const tranlateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
 ---
 
 <header
   id="inicio"
-  class="relative w-full px-8 pt-24 flex items-center gap-x-4 tablet:px-48"
+  class="relative w-full px-12 pt-24 flex items-center gap-x-4 tablet:w-8/12"
 >
   <Image
     loading="eager"
@@ -19,7 +27,7 @@ import meImage from "../../src/images/me.webp";
       aria-label="Enlace a Linkedin"
       href="https://www.linkedin.com/in/carlosfrontend/"
       rel="noopener noreferrer"
-      target="_blank">Disponible para trabajar</a
+      target="_blank">{tranlateLabels('header.title')}</a
     >
   </Badge>
 </header>

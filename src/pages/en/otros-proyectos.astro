@@ -1,0 +1,56 @@
+---
+import CardProject from "../../components/CardProject.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Layout from "../../layouts/Layout.astro";
+import projects from "../../components/data/projects";
+
+const section = { id: "#otros-proyectos", name: "Otros Proyectos" };
+const PROJECTS = projects();
+---
+
+<Layout
+  title="Porfolio de Carlos Pulido Desarrollador y Programador Web - Otros Proyectos."
+  description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
+>
+  <main class="relative pt-4 w-full desktop:w-8/12 desktop:self-center">
+    <SectionContainer id={section.id} className="pt-36">
+      <h3
+        class="text-3xl flex items-center gap-x-2 pb-14 font-bold dark:text-white text-slate-800"
+      >
+        <span>
+          <svg
+            class="size-8"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M7 8l-4 4l4 4"></path>
+            <path d="M17 8l4 4l-4 4"></path>
+            <path d="M14 4l-4 16"></path>
+          </svg>
+        </span>
+        {section.name}
+      </h3>
+
+      {
+        section.name === "Otros Proyectos" &&
+          PROJECTS.splice(3, PROJECTS.length).map((project) => (
+            <CardProject
+              transition:animate="slide"
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              loading={project.loading}
+              codeLink={project.codeLink}
+              liveLink={project.liveLink}
+              tags={project.tags}
+            />
+          ))
+      }
+    </SectionContainer>
+  </main>
+</Layout>

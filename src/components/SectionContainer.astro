@@ -11,7 +11,7 @@ const { id, title, className } = Astro.props;
 <section
   id={id}
   title={title}
-  class=`w-full bg-white/0 h-auto relative p-6 tablet:px-48 ${className}`
+  class=`w-full bg-white/0 h-auto relative py-6 px-12 tablet:w-8/12 desktop:w-8/12 ${className}`
 >
   <slot />
 </section>

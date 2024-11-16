@@ -4,7 +4,9 @@ import "@fontsource-variable/inter";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
-import 'devicon/devicon.min.css'
+import "devicon/devicon.min.css";
+import { ViewTransitions } from "astro:transitions";
+const currentLang = Astro.currentLocale || "es";
 
 interface Props {
   title: string;
@@ -15,7 +17,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="title" content={title} />
@@ -24,15 +26,14 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
 
   <body>
     <Navigation />
-    <Header id="inicio" />
-    <slot />
+    <slot transition:animate="slide" />
     <Footer />
-  </body>
-  <style is:global>
+  </body><style is:global>
     :root {
       color-scheme: light dark;
     }
@@ -48,9 +49,11 @@ const { title, description } = Astro.props;
       width: 100%;
     }
 
-    body{
+    body {
       min-height: 100vh;
       overscroll-behavior: none;
+      display: flex;
+      flex-direction: column;
     }
 
     @media (prefers-reduced-motion: reduce) {

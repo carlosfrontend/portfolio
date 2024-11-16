@@ -1,30 +1,38 @@
 ---
+const currentLang = Astro.currentLocale || "es";
 import ThemeIcons from "./ThemeIcons";
 import SpainIcon from "../../src/icons/SpainIcon";
 import UnitedkingdomIcon from "../../src/icons/UnitedkingdomIcon.jsx";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils";
+import type { languageList } from "../i18n/ui";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
 
 const buttonTransition =
   "transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:scale-125 hover:font-semibold dark:text-slate-300";
 
 const primaryNavItems = [
   {
-    title: "Inicio",
-    url: "#inicio",
+    title: translateLabels("nav.home"),
+    url: `${getRelativeLocaleUrl(currentLang, "/")}`,
     class: buttonTransition,
   },
   {
-    title: "Proyectos",
-    url: "#proyectos",
+    title: translateLabels("nav.projects"),
+    url: translateLabels("projects.url"),
     class: buttonTransition,
   },
   {
-    title: "Sobre mí",
-    url: "#sobre-mi",
+    title: translateLabels("nav.about"),
+    url: translateLabels("about.url"),
     class: buttonTransition,
   },
   {
-    title: "Habilidades",
-    url: "#habilidades",
+    title: translateLabels("nav.skills"),
+    url: translateLabels("skills.url"),
     class: buttonTransition,
   },
 ];
@@ -33,18 +41,18 @@ const secondaryNavItems = [
   {
     logo: SpainIcon,
     url: "/",
-    label:'Cambiar idioma a Español.'
+    label: "Cambiar idioma a Español.",
   },
   {
     logo: UnitedkingdomIcon,
     url: "/en",
-    label:'Cambiar idioma a Inglés.'
+    label: "Cambiar idioma a Inglés.",
   },
 ];
 ---
 
 <nav
-  class="fixed top:0 w-full z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-slate-950 bg-slate-100 md:w-full lg:rounded-md md:h-auto lg:mt-6 md:mx-auto lg:w-6/12 lg:mx-auto"
+  class="fixed top:0 w-full z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-neutral-900 bg-white border-2 dark:border-0 md:w-full md:h-auto md:mx-auto desktop:w-8/12 desktop:self-center"
 >
   <div
     class="divide-y-2 divide-gray-500 dark:divide-y-2 dark:divide-slate-100/40"
@@ -59,7 +67,20 @@ const secondaryNavItems = [
       }
     </div>
     <div class="flex justify-end items-center gap-x-2 pr-6 py-2">
-      {secondaryNavItems.map((link) => <a class= 'flex gap-x-1 items-center' aria-label={link.label} href={link.url}><span class="text-xs">{link.url === '/en' ? 'EN' : 'ES'}</span>{<link.logo />}</a>)}
+      {
+        secondaryNavItems.map((link) => (
+          <a
+            class="flex gap-x-1 items-center"
+            aria-label={link.label}
+            href={link.url}
+          >
+            <span class="text-xs dark:text-white/80">
+              {link.url === "/en" ? "EN" : "ES"}
+            </span>
+            {<link.logo />}
+          </a>
+        ))
+      }
       <ThemeIcons client:load />
     </div>
   </div>

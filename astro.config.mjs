@@ -12,6 +12,9 @@ export default defineConfig({
   integrations: [react({ experimentalReactChildren: true }), tailwind()],
   i18n: {
     defaultLocale: "es",
-    locales: ["en", "es"],
+    locales: ["es", "en"],
+    routing:{
+      prefixDefaultLocale: true,
+    }
   },
 });

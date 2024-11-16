@@ -1,6 +1,11 @@
 import todoListImage from "../../images/todoList.webp";
 import memoryCardImage from "../../images/memoryCard.webp";
 import battleshipImage from "../../images/battleship.webp";
+import homePageImage from "../../images/homePage.webp";
+import ticTacToeImage from "../../images/ticTacToe.webp";
+import gifGeneratorImage from "../../images/gifGenerator.webp";
+import weatherAppImage from "../../images/weatherApp.webp";
+import restaurantPageImage from "../../images/restaurantPage.webp";
 
 const projects = () => [
   {
@@ -61,9 +66,9 @@ const projects = () => [
   {
     title: "Home Page",
     description: "Una página de inicio responsiva.",
+    image: homePageImage,
     codeLink: "https://github.com/carlosfrontend/odin-homepage/",
     liveLink: "https://carlosfrontend.github.io/odin-homepage/",
-    imageUrl: "https://placehold.co/300X200",
     loading: "eager",
     tags: [
       { name: "HTML5", className: "devicon-html5-plain colored" },
@@ -72,8 +77,78 @@ const projects = () => [
         name: "Javascript",
         className: "devicon-javascript-plain colored",
       },
+      { name: "Webpack", className: "devicon-webpack-plain colored" },
+    ],
+  },
+  {
+    title: "Tic Tac Toe",
+    description: "El juego de las Tres en Raya.",
+    image: ticTacToeImage,
+    codeLink: "https://github.com/carlosfrontend/tictactoe-top/",
+    liveLink: "https://carlosfrontend.github.io/tictactoe-top/",
+    loading: "eager",
+    tags: [
+      { name: "HTML5", className: "devicon-html5-plain colored" },
+      { name: "CSS3", className: "devicon-css3-plain colored" },
+      {
+        name: "Javascript",
+        className: "devicon-javascript-plain colored",
+      },
+      { name: "Webpack", className: "devicon-webpack-plain colored" },
+    ],
+  },
+  {
+    title: "Gif Generator",
+    description:
+      "Generador automático y buscador de GIF's animados usando la API GIPPHY.",
+    image: gifGeneratorImage,
+    codeLink: "https://github.com/carlosfrontend/gif-generator",
+    liveLink: "https://carlosfrontend.github.io/gif-generator/",
+    loading: "lazy",
+    tags: [
+      { name: "HTML5", className: "devicon-html5-plain colored" },
+      { name: "CSS3", className: "devicon-css3-plain colored" },
+      {
+        name: "Javascript",
+        className: "devicon-javascript-plain colored",
+      },
+      { name: "Webpack", className: "devicon-webpack-plain colored" },
+    ],
+  },
+  {
+    title: "Weather App",
+    description: "Aplicación del tiempo. Uso de la API Weather API.",
+    image: weatherAppImage,
+    codeLink: "https://github.com/carlosfrontend/weather-app/",
+    liveLink: "https://carlosfrontend.github.io/weather-app/",
+    loading: "lazy",
+    tags: [
+      { name: "HTML5", className: "devicon-html5-plain colored" },
+      { name: "CSS3", className: "devicon-css3-plain colored" },
+      {
+        name: "Javascript",
+        className: "devicon-javascript-plain colored",
+      },
+      { name: "Webpack", className: "devicon-webpack-plain colored" },
+    ],
+  },
+  {
+    title: "Restaurant Page",
+    description: "Página de restaurante.",
+    image: restaurantPageImage,
+    codeLink: "https://github.com/carlosfrontend/restaurant-page-top",
+    liveLink: "https://carlosfrontend.github.io/restaurant-page-top/",
+    loading: "lazy",
+    tags: [
+      { name: "HTML5", className: "devicon-html5-plain colored" },
+      { name: "CSS3", className: "devicon-css3-plain colored" },
+      {
+        name: "Javascript",
+        className: "devicon-javascript-plain colored",
+      },
+      { name: "Webpack", className: "devicon-webpack-plain colored" },
     ],
   },
 ];
 
-export { projects };
+export default projects;

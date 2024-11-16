@@ -2,12 +2,21 @@
 import ResumeIcon from "../icons/ResumeIcon";
 import EmailIcon from "../icons/EmailIcon";
 import ButtonToolTip from "./ButtonToolTip.jsx";
+import { useTranslations } from "../i18n/utils";
+import type { languageList } from "../i18n/ui";
+
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
 ---
 
 <h1
   class="w-full text-4xl dark:text-4xl text-slate-800 dark:text-slate-300 font-bold"
 >
-  Hey! 👋, soy <strong
+  {translateLabels("hero.greeting")}
+  <strong
     class="bg-clip-text text-transparent bg-gradient-to-r dark:from-sky-400 dark:to-sky-600 from-slate-800 to-slate-700 text-4xl font-bold"
     >Carlos Pulido</strong
   >
@@ -15,17 +24,23 @@ import ButtonToolTip from "./ButtonToolTip.jsx";
 <h2
   class="w-full mx-auto text-pretty font-normal dark:text-slate-300 text-gray-800 py-4 text-xl"
 >
-  Un <strong class="dark:text-yellow-200 text-slate-700 font-bold"
-    >Desarrollador Front-End</strong
-  > de Madrid, España 🇪🇸.
+  <strong class="dark:text-yellow-200 text-slate-700 font-bold"
+    >{translateLabels("hero.profession")}</strong
+  >
+  {translateLabels("hero.location")}
 </h2>
 <p class="w-full mx-auto dark:text-slate-300 text-gray-800 py-1 text-xl">
-  LLevo ➕ de un año 📅 <strong
-    class="dark:text-yellow-200/70 text-slate-700 font-bold">estudiando</strong
-  > y <strong class="dark:text-yellow-200/70 text-slate-700 font-bold"
-    >programando</strong
-  > gracias a los maravillosos recursos del proyecto de Open Source <a
-    class="text-sky-600 border-b-2 border-b-sky-600 hover:border-b-sky-500 hover:text-sky-500"
+  {translateLabels("hero.timeOfStudy")}
+  <strong class="dark:text-yellow-200/70 text-slate-700 font-bold"
+    >{translateLabels("hero.studying")}</strong
+  >
+  {translateLabels("hero.and")}
+  <strong class="dark:text-yellow-200/70 text-slate-700 font-bold"
+    >{translateLabels("hero.programming")}</strong
+  >
+  {translateLabels("hero.thanks")}
+  <a
+    class="text-slate-800/80 border-b-2 dark:text-white/80 dark:hover:text-white/90 dark:border-b-white/80 border-b-slate-800/80 hover:border-b-slate-900 dark:hover:border-b-white/90 hover:text-slate-900"
     href="https://www.theodinproject.com/"
     rel="noopener noreferrer"
     target="_blank"
@@ -35,7 +50,7 @@ import ButtonToolTip from "./ButtonToolTip.jsx";
 </p>
 
 <p class="w-full mx-auto dark:text-slate-300 text-gray-800 py-1 text-xl">
-  Desde aquí 👇 puedes:
+  {translateLabels("hero.optionsText")}
 </p>
 
 <div
@@ -45,13 +60,15 @@ import ButtonToolTip from "./ButtonToolTip.jsx";
     aria-label="Ver mi Currículum"
     class="flex w-[200px] h-10 items-center justify-center dark:bg-slate-800 border-2 dark:border-sky-400 dark:text-slate-300 bg-slate-700 text-sm gap-2 rounded-md"
     href="/resume.pdf"
-    target="_blank"><span><ResumeIcon /></span>Ver mi Currículum</a
+    target="_blank"
+    ><span><ResumeIcon /></span>{translateLabels("hero.cvButton")}</a
   >
   <a
     aria-label="Enviarme un correo"
     class="flex w-[200px] h-10 items-center justify-center dark:bg-slate-800 border-2 dark:border-amber-400 dark:text-slate-300 bg-slate-700 text-sm gap-2 rounded-md"
-    href="mailto:carlosfrontend@hotmail.com"><EmailIcon />Enviarme un correo</a
+    href="mailto:carlosfrontend@hotmail.com"><EmailIcon />{translateLabels('hero.sendEmail')}</a
   >
+
   <input
     disabled
     id="email"
@@ -62,5 +79,5 @@ import ButtonToolTip from "./ButtonToolTip.jsx";
     id="email"
     value="carlosfrontend@hotmail.com"
   />
-  <ButtonToolTip client:only="react" />
+  <ButtonToolTip currentLang={Astro.currentLocale || "es"} client:only="react" />
 </div>
