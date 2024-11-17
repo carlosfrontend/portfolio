@@ -1,5 +1,12 @@
 ---
+import type { languageList } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+
 const currentYear = new Date().getFullYear();
+const currentLang = Astro.currentLocale || "es";
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
 ---
 
 <footer
@@ -11,7 +18,7 @@ const currentYear = new Date().getFullYear();
       class="transition duration-150
     hover:border-b-[1px] hover:pb-1 hover:border-slate-700 hover:text-slate-700
     hover:dark:border-b-[1px] hover:dark:pb-1 hover:dark:border-yellow-200 hover:dark:text-yellow-200"
-      href="/#inicio">Carlos Pulido.</a
+      href=`/${currentLang}/${translateLabels('home.url')}`>Carlos Pulido.</a
     >
   </span>
   <div

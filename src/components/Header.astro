@@ -7,13 +7,13 @@ import type { languageList } from "../i18n/ui";
 
 const currentLang = Astro.currentLocale || "es";
 
-const tranlateLabels = useTranslations(
+const translateLabels = useTranslations(
   currentLang as keyof typeof languageList
 );
 ---
 
 <header
-  id="inicio"
+  id={translateLabels('home.id')}
   class="relative w-full px-12 pt-24 flex items-center gap-x-4 tablet:w-8/12"
 >
   <Image
@@ -27,7 +27,7 @@ const tranlateLabels = useTranslations(
       aria-label="Enlace a Linkedin"
       href="https://www.linkedin.com/in/carlosfrontend/"
       rel="noopener noreferrer"
-      target="_blank">{tranlateLabels('header.title')}</a
+      target="_blank">{translateLabels('header.title')}</a
     >
   </Badge>
 </header>

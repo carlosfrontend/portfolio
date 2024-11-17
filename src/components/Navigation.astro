@@ -17,22 +17,22 @@ const buttonTransition =
 const primaryNavItems = [
   {
     title: translateLabels("nav.home"),
-    url: `${getRelativeLocaleUrl(currentLang, "/")}`,
+    url:  `/${currentLang}/${translateLabels('home.url')}`,
     class: buttonTransition,
   },
   {
     title: translateLabels("nav.projects"),
-    url: translateLabels("projects.url"),
+    url: `/${currentLang}/${translateLabels('projects.url')}`,
     class: buttonTransition,
   },
   {
     title: translateLabels("nav.about"),
-    url: translateLabels("about.url"),
+    url: `/${currentLang}/${translateLabels('about.url')}`,
     class: buttonTransition,
   },
   {
     title: translateLabels("nav.skills"),
-    url: translateLabels("skills.url"),
+    url: `/${currentLang}/${translateLabels('skills.url')}`,
     class: buttonTransition,
   },
 ];
