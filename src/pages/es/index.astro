@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import SectionContainer from "../../components/SectionContainer.astro";
-import projects from "../../components/data/projects";
 import CardProject from "../../components/CardProject.astro";
 import ProjectsIcon from "../../components/ProjectsIcon.astro";
 import Skills from "../../components/Skills.astro";
@@ -10,8 +9,14 @@ import Header from "../../components/Header.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations } from "../../i18n/utils";
 import type { languageList } from "../../i18n/ui";
+import { getCollection } from 'astro:content';
+
+const spanishProjectEntries = await getCollection('projects', ({ id }) => {
+  return id.startsWith('es/');
+});
 
 const currentLang = Astro.currentLocale || "es";
+
 const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 
 const sections = [
@@ -19,13 +24,10 @@ const sections = [
   { id: translateLabels('about.id'), name: translateLabels('about.title'), icon: ProjectsIcon },
   { id: translateLabels('skills.id'), name: translateLabels("skills.title"), icon: ProjectsIcon },
 ];
-
-const PROJECTS = projects();
-
 ---
 
 <Layout
-  title="Porfolio de Carlos Pulido Desarrollador y Programador Web- Página principal."
+  title="Porfolio de Carlos Pulido Desarrollador y Programador Web - Página principal."
   description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
 >
   <main class="relative pt-4 w-full desktop:w-8/12 desktop:self-center">
@@ -116,17 +118,19 @@ const PROJECTS = projects();
           )}
 
           {section.name === translateLabels('projects.title') &&
-            PROJECTS.slice(0, 3).map((project) => (
-              <CardProject
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                loading={project.loading}
-                codeLink={project.codeLink}
-                liveLink={project.liveLink}
-                tags={project.tags}
-              />
-            ))}
+           spanishProjectEntries.slice(0,3).map(project => 
+           <CardProject
+                title={project.data.title}
+                description={project.data.description}
+                imageSrc={project.data.image.src}
+                imageAlt ={project.data.image.alt}
+                loading={project.data.loading}
+                codeLink={project.data.codeLink}
+                liveLink={project.data.liveLink}
+                tags={project.data.tags}
+              /> 
+          )
+            }
           {section.name === translateLabels('projects.title') && (
             <a
               href={getRelativeLocaleUrl(currentLang, 'otros-proyectos')}

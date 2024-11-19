@@ -1,11 +1,25 @@
 ---
+import { getCollection } from "astro:content";
 import CardProject from "../../components/CardProject.astro";
 import SectionContainer from "../../components/SectionContainer.astro";
 import Layout from "../../layouts/Layout.astro";
-import projects from "../../components/data/projects";
+import { useTranslations } from "../../i18n/utils";
+import type { languageList } from "../../i18n/ui";
 
-const section = { id: "#otros-proyectos", name: "Otros Proyectos" };
-const PROJECTS = projects();
+const currentLang = Astro.currentLocale || "es";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof languageList
+);
+
+const section = {
+  id: translateLabels("otherProjects.id"),
+  name: translateLabels("otherProjects.name"),
+};
+
+const projects = await getCollection("projects", ({ id }) => {
+  return id.startsWith(currentLang);
+});
 ---
 
 <Layout
@@ -13,7 +27,10 @@ const PROJECTS = projects();
   description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
 >
   <main class="relative pt-4 w-full desktop:w-8/12 desktop:self-center">
-    <SectionContainer id={section.id} className="pt-36">
+    <SectionContainer
+      id={`${translateLabels("otherProjects.id")}`}
+      className="pt-36"
+    >
       <h3
         class="text-3xl flex items-center gap-x-2 pb-14 font-bold dark:text-white text-slate-800"
       >
@@ -33,23 +50,25 @@ const PROJECTS = projects();
             <path d="M14 4l-4 16"></path>
           </svg>
         </span>
-        {section.name}
+        {translateLabels("otherProjects.name")}
       </h3>
 
       {
-        section.name === "Otros Proyectos" &&
-          PROJECTS.splice(3, PROJECTS.length).map((project) => (
-            <CardProject
-              transition:animate="slide"
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              loading={project.loading}
-              codeLink={project.codeLink}
-              liveLink={project.liveLink}
-              tags={project.tags}
-            />
-          ))
+        section.name === translateLabels("otherProjects.name") &&
+          projects
+            .slice(3, 7)
+            .map((project) => (
+              <CardProject
+                title={project.data.title}
+                description={project.data.description}
+                imageSrc={project.data.image.src}
+                imageAlt={project.data.image.alt}
+                loading={project.data.loading}
+                codeLink={project.data.codeLink}
+                liveLink={project.data.liveLink}
+                tags={project.data.tags}
+              />
+            ))
       }
     </SectionContainer>
   </main>

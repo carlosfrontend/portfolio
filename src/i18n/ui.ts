@@ -37,6 +37,8 @@ export const labels = {
     "hero.sendEmail": "Envíame un correo",
     "hero.copyEmail": "Copiar mi correo",
     "hero.copyEmail.ToastMessage":"Correo copiado!",
+    "otherProjects.id": "#otros-proyectos",
+    "otherProjects.name": "Otros Proyectos"
   },
   en: {
     "nav.home": "Home",
@@ -71,5 +73,7 @@ export const labels = {
     "hero.sendEmail": "Send me an email",
     "hero.copyEmail": "Copy my email",
     "hero.copyEmail.ToastMessage":"Email copied!",
+    "otherProjects.id": "#other-projects",
+    "otherProjects.name": "Other Projects"
   },
 };
