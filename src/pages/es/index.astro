@@ -133,8 +133,8 @@ const sections = [
             }
           {section.name === translateLabels('projects.title') && (
             <a
-              href={getRelativeLocaleUrl(currentLang, 'otros-proyectos')}
-              class="flex h-10 items-center justify-center dark:bg-cyan-950 text-slate-100 bg-slate-800 rounded-sm w-36 px-2"
+              href={getRelativeLocaleUrl(currentLang, translateLabels('otherProjects.id').slice(1))}
+              class="flex h-10 items-center justify-center dark:bg-cyan-950 text-slate-100 bg-slate-950 rounded-sm w-36 px-2 transition duration-300 ease-in-out hover:scale-105 hover:dark:bg-cyan-700 hover:bg-slate-800"
             >
              {translateLabels('projects.button')}
             </a>
@@ -145,4 +145,3 @@ const sections = [
    
   </main>
 </Layout>
-

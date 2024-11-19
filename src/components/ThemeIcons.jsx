@@ -38,6 +38,7 @@ const ThemeIcons = () => {
       onClick={handleToggleClick}
       id="themeToggle"
       aria-label="Cambiar el tema de color"
+      className="transition duration-150 ease-in-out hover:scale-110 hover:rotate-[-20deg]"
     >
       <svg width="25.5px" viewBox="0 0 24 24">
         <path

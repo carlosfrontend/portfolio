@@ -5,7 +5,7 @@ interface Props {
   title: string;
   description: string;
   imageSrc: string;
-  imageAlt:string;
+  imageAlt: string;
   codeLink: string;
   liveLink: string;
   tags: Array<object>;
@@ -24,8 +24,9 @@ const {
 } = Astro.props;
 ---
 
-<article class="w-full pb-14 border-solid">
+<article id="project" class="w-full pb-14 border-solid">
   <Image
+    id="project-image"
     class="tablet:w-[380px] rounded-md shadow-xl dark:shadow-slate-300/20 shadow-slate-700/20 mb-4"
     height="450"
     width="800"
@@ -36,6 +37,7 @@ const {
   <div class="flex justify-start pt-2 pb-4 gap-x-3">
     <a
       href={codeLink}
+      class="transition duration-150 ease-in-out hover:transform hover:scale-110"
       aria-label="Ver código del proyecto"
       target="_blank"
       rel="noreferrer noopener"
@@ -55,6 +57,7 @@ const {
     >
     <a
       href={liveLink}
+      class="transition duration-150 ease-in-out hover:transform hover:scale-110"
       aria-label="Ver proyecto en vivo"
       target="_blank"
       rel="noreferrer noopener"
@@ -93,3 +96,59 @@ const {
     }
   </div>
 </article>
+
+<script type="module">
+  // CardProject transitions
+  const projects = [...document.querySelectorAll("#project")];
+
+  const effectIn = [
+      "transition-all",
+      "duration-150",
+      "delay-50",
+      "ease-in",
+      "opacity-90",
+      "bg-black",
+      "transform",
+      "scale-105",
+      "rotate-1",
+      "backward"
+    ];
+
+    const effectOut = [
+      "transition-all",
+      "duration-300",
+      "delay-0",
+      "ease-out",
+      "opacity-100",
+      "bg-black",
+      "transform",
+      "scale-100",
+      "rotate-0",
+      "forward"
+    ];
+
+
+  function handleEnter(e) {
+    const image = e.target.firstElementChild;
+    image.classList.add(...effectIn)
+    image.classList.remove(...effectOut)
+  }
+
+  function handleLeave(e) {
+    const image = e.target.firstElementChild;
+    image.classList.remove(...effectIn)
+    image.classList.add(...effectOut)
+  }
+
+
+  projects.forEach((project) =>
+    project.addEventListener("mouseenter", handleEnter)
+  );
+
+ 
+
+  projects.forEach(project =>
+    project.addEventListener("mouseleave", handleLeave)
+  );
+  
+</script>

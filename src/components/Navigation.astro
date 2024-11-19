@@ -3,7 +3,6 @@ const currentLang = Astro.currentLocale || "es";
 import ThemeIcons from "./ThemeIcons";
 import SpainIcon from "../../src/icons/SpainIcon";
 import UnitedkingdomIcon from "../../src/icons/UnitedkingdomIcon.jsx";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations } from "../i18n/utils";
 import type { languageList } from "../i18n/ui";
 
@@ -52,7 +51,7 @@ const secondaryNavItems = [
 ---
 
 <nav
-  class="fixed top:0 w-full z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-neutral-900 bg-white border-2 dark:border-0 md:w-full md:h-auto md:mx-auto desktop:w-8/12 desktop:self-center"
+  class="fixed top:0 w-full z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center text-slate-600 dark:bg-neutral-900 bg-white border-2 dark:border-0 md:w-full md:h-auto md:mx-auto desktop:w-8/12 desktop:self-center desktop:rounded-b-xl desktop:border-transparent"
 >
   <div
     class="divide-y-2 divide-gray-500 dark:divide-y-2 dark:divide-slate-100/40"
@@ -60,7 +59,7 @@ const secondaryNavItems = [
     <div class="flex justify-evenly items-center text-xs py-2 px-2">
       {
         primaryNavItems.map((link) => (
-          <a class={link.class} href={link.url}>
+          <a class={`tablet:text-base ${link.class}`} href={link.url}>
             {link.title}
           </a>
         ))
@@ -70,7 +69,7 @@ const secondaryNavItems = [
       {
         secondaryNavItems.map((link) => (
           <a
-            class="flex gap-x-1 items-center"
+            class="flex gap-x-1 items-center transition duration-150 ease-in-out hover:font-bold hover:scale-110"
             aria-label={link.label}
             href={link.url}
           >
