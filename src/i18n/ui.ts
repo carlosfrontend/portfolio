@@ -36,9 +36,18 @@ export const labels = {
     "hero.cvButton": "Ver mi Currículum",
     "hero.sendEmail": "Envíame un correo",
     "hero.copyEmail": "Copiar mi correo",
-    "hero.copyEmail.ToastMessage":"Correo copiado!",
+    "hero.copyEmail.ToastMessage": "Correo copiado!",
     "otherProjects.id": "#otros-proyectos",
-    "otherProjects.name": "Otros Proyectos"
+    "otherProjects.name": "Otros Proyectos",
+    "about.bring": "Aporto",
+    "about.softSkills": 'habilidades analíticas y organizativas',
+    "about.knowledge":', y utilizo mis conocimientos para crear',
+    "about.webInterfaces":"interfaces web",
+    "about.combine":"que combinan",
+    "about.design":"diseño intuitivo y funcionalidad",
+    "about.curiosity": "Mi curiosidad y dedicación me impulsan a",
+    "about.learn":"aprender constantemente",
+    "about.connect": "y a conectar con las necesidades de las personas a través de la tecnologías."
   },
   en: {
     "nav.home": "Home",
@@ -72,8 +81,17 @@ export const labels = {
     "hero.cvButton": "See my Resume",
     "hero.sendEmail": "Send me an email",
     "hero.copyEmail": "Copy my email",
-    "hero.copyEmail.ToastMessage":"Email copied!",
+    "hero.copyEmail.ToastMessage": "Email copied!",
     "otherProjects.id": "#other-projects",
-    "otherProjects.name": "Other Projects"
+    "otherProjects.name": "Other Projects",
+    "about.bring": "I bring",
+    "about.softSkills":"analytical and organizational skills",
+    "about.knowledge":', and use my knowledge to create',
+    "about.webInterfaces":"web interfaces",
+    "about.combine":"that combine",
+    "about.design":"intuitive design and functionality",
+    "about.curiosity": "My curiosity and dedication drive me to",
+    "about.learn":"constantly learn",
+    "about.connect": "and connect with people's needs through technology."
   },
 };

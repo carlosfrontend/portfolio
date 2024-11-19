@@ -81,14 +81,14 @@ const sections = [
               {section.name}
             </h3>
              <p class="text-xl font-normal text-pretty dark:text-white/80 text-gray-700">
-            Aporto <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
-            >habilidades analíticas y organizativas</strong>, y utilizo mis conocimientos para crear <strong class="dark:text-yellow-200/80 text-slate-700 font-bold">interfaces web</strong> que combinan <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
-            >diseño intuitivo y funcionalidad.</strong>
+            {translateLabels('about.bring')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
+            >{translateLabels('about.softSkills')}</strong> {translateLabels('about.knowledge')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold">{translateLabels('about.webInterfaces')}</strong> {translateLabels('about.combine')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
+            >{translateLabels('about.design')}</strong>.
         </p>
         <p class="text-xl font-normal text-pretty dark:text-white/80 text-slate-700">
-          Mi curiosidad y dedicación me impulsan a <span
-            class="dark:text-yellow-200/80 text-slate-700 font-bold">aprender constantemente</span
-          > y a conectar con las necesidades de las personas a través de la tecnologías.
+          {translateLabels('about.curiosity')} <span
+            class="dark:text-yellow-200/80 text-slate-700 font-bold">{translateLabels('about.learn')}</span
+          > {translateLabels('about.connect')}
         </p>
           ) : (
             <h3 class="text-3xl flex items-center gap-x-2 pb-4 font-bold dark:text-white text-slate-800">
