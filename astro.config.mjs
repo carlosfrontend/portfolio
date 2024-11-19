@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
-    enabled: true,
+    enabled: false,
   },
   integrations: [react({ experimentalReactChildren: true }), tailwind(), mdx()],
   i18n: {

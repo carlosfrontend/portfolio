@@ -1,54 +1,39 @@
-# Astro Starter Kit: Basics
+# Carlos Pulido's Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This repository is to host the code for my personal portfolio project.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Screenshots
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![lightMode](https://github.com/user-attachments/assets/43e40578-e92f-4253-8f10-bc45409a5622)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+###
 
-## 🚀 Project Structure
+![darkMode](https://github.com/user-attachments/assets/3ade6928-7706-42d8-b12f-8e8c60775f46)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Features
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Responsive
+- i18n: English and Spanish supported
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🔗 Links
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlosfrontend/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/CarlosFrontEnd)
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Lessons Learned
 
-## 🧞 Commands
+It is the first time I work with technologies like Astro, Tailwind and MDX... The truth is that I have been learning along the way and it has been very satisfying and productive.
 
-All commands are run from the root of the project, from a terminal:
+## Tech Stack
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Client:** AstroJS, React, ,TailwindCSS, Javascript
 
-## 👀 Want to learn more?
+## Demo
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![animation](https://github.com/user-attachments/assets/e8e67dcd-5a44-4ace-b8d0-8280f7543578)
+
+## [Live Preview](https://github.com/user-attachments/assets/e8e67dcd-5a44-4ace-b8d0-8280f7543578)
