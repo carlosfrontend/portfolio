@@ -8,13 +8,29 @@ import mdx from "@astrojs/mdx";
 
 import netlify from "@astrojs/netlify";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  site: "https://carlospulido.netlify.app",
 
-  integrations: [react({ experimentalReactChildren: true }), tailwind(), mdx()],
+  integrations: [
+    react({ experimentalReactChildren: true }),
+    tailwind(),
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: "es",
+        locales: {
+          es: "es-ES",
+          en: "en-US",
+        },
+      },
+    }),
+  ],
 
   i18n: {
     defaultLocale: "es",
