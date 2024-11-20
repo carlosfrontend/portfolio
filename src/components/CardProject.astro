@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 interface Props {
   title: string;
   description: string;
-  imageSrc: string;
+  image: ImageMetadata;
   imageAlt: string;
   codeLink: string;
   liveLink: string;
@@ -15,7 +15,7 @@ interface Props {
 const {
   title,
   description,
-  imageSrc,
+  image,
   imageAlt,
   codeLink,
   liveLink,
@@ -31,7 +31,7 @@ const {
     height="450"
     width="800"
     loading={loading}
-    src={imageSrc}
+    src={image}
     alt={imageAlt}
   />
   <div class="flex justify-start pt-2 pb-4 gap-x-3">

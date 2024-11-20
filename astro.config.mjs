@@ -6,8 +6,6 @@ import tailwind from "@astrojs/tailwind";
 
 import mdx from "@astrojs/mdx";
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
@@ -23,7 +21,4 @@ export default defineConfig({
       prefixDefaultLocale: true,
     }
   },
-
-  output: "server",
-  adapter: netlify(),
 });
