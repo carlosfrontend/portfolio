@@ -20,7 +20,7 @@ This repository is to host the code for my personal portfolio project.
 
 ## 🔗 Links
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://carlospulido.netlify.app/es/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlosfrontend/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/CarlosFrontEnd)
 
@@ -36,4 +36,4 @@ It is the first time I work with technologies like Astro, Tailwind and MDX... Th
 
 ![animation](https://github.com/user-attachments/assets/e8e67dcd-5a44-4ace-b8d0-8280f7543578)
 
-## [Live Preview](https://github.com/user-attachments/assets/e8e67dcd-5a44-4ace-b8d0-8280f7543578)
+## [Live Preview](https://carlospulido.netlify.app/es/)
