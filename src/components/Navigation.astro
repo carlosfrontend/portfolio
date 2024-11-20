@@ -4,7 +4,7 @@ import ThemeIcons from "./ThemeIcons";
 import SpainIcon from "../../src/icons/SpainIcon";
 import UnitedkingdomIcon from "../../src/icons/UnitedkingdomIcon.jsx";
 import { useTranslations } from "../i18n/utils";
-import type { languageList } from "../i18n/ui";
+import { languageList } from "../i18n/ui";
 
 const translateLabels = useTranslations(
   currentLang as keyof typeof languageList
@@ -74,7 +74,7 @@ const secondaryNavItems = [
             href={link.url}
           >
             <span class="text-xs dark:text-white/80">
-              {link.url === "/en" ? "EN" : "ES"}
+              {link.url === "/en/" ? "EN" : "ES"}
             </span>
             {<link.logo />}
           </a>

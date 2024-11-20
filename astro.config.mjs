@@ -19,9 +19,13 @@ export default defineConfig({
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
-    routing:{
+    routing: {
       prefixDefaultLocale: true,
-    }
+    },
+  },
+  image: {
+    domains: ["astro.build"],
+    remotePatterns: [{ protocol: "https" }],
   },
 
   output: "server",
