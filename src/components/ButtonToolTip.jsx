@@ -9,7 +9,7 @@ const ButtonToast = ({ currentLang }) => {
   const translateLabels = useTranslations(currentLang);
   const [email, setEmail] = useState("");
   useEffect(() => {
-    const email = document.querySelector("#email").value;
+    const email = document.querySelector("#email").textContent;
     setEmail(email);
   });
 

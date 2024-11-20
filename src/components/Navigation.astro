@@ -40,12 +40,12 @@ const secondaryNavItems = [
   {
     logo: SpainIcon,
     url: "/es/",
-    label: "Cambiar idioma a Español.",
+    label: translateLabels('nav.aria.changeEsLanguage'),
   },
   {
     logo: UnitedkingdomIcon,
     url: "/en/",
-    label: "Cambiar idioma a Inglés.",
+    label: translateLabels('nav.aria.changeEnlanguage'),
   },
 ];
 ---
@@ -80,7 +80,7 @@ const secondaryNavItems = [
           </a>
         ))
       }
-      <ThemeIcons client:load />
+      <ThemeIcons currentLang={currentLang} client:load />
     </div>
   </div>
 </nav>

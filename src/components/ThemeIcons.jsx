@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import "../components/css/themeIcons.css";
+import { useTranslations } from "../i18n/utils";
 
-const ThemeIcons = () => {
+const ThemeIcons = ({currentLang}) => {
+  const translateLabels = useTranslations(currentLang);
   useEffect(() => {
     const theme = (() => {
       if (
@@ -37,7 +39,7 @@ const ThemeIcons = () => {
     <button
       onClick={handleToggleClick}
       id="themeToggle"
-      aria-label="Cambiar el tema de color"
+      aria-label={translateLabels('nav.aria.changeTheme')}
       className="transition duration-150 ease-in-out hover:scale-110 hover:rotate-[-20deg]"
     >
       <svg width="25.5px" viewBox="0 0 24 24">
