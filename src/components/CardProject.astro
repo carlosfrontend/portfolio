@@ -77,14 +77,10 @@ const {
       ></a
     >
   </div>
+
   <h3 class="text-2xl pb-2 dark:text-white/80 text-slate-700 font-semibold">
     {title}
   </h3>
-  <p
-    class="w-full text-lg text-pretty font-normal dark:text-white/80 text-gray-700"
-  >
-    {description}
-  </p>
   <div class="flex flex-wrap gap-x-4 py-3">
     {
       tags.map((tag) => (
@@ -95,6 +91,11 @@ const {
       ))
     }
   </div>
+  <p
+    class="w-full text-lg text-pretty font-normal dark:text-white/80 text-gray-700"
+  >
+    {description}
+  </p>
 </article>
 
 <script type="module">
@@ -102,53 +103,48 @@ const {
   const projects = [...document.querySelectorAll("#project")];
 
   const effectIn = [
-      "transition-all",
-      "duration-150",
-      "delay-50",
-      "ease-in",
-      "opacity-90",
-      "bg-black",
-      "transform",
-      "scale-105",
-      "rotate-1",
-      "backward"
-    ];
+    "transition-all",
+    "duration-150",
+    "delay-50",
+    "ease-in",
+    "opacity-90",
+    "bg-black",
+    "transform",
+    "scale-105",
+    "rotate-1",
+    "backward",
+  ];
 
-    const effectOut = [
-      "transition-all",
-      "duration-300",
-      "delay-0",
-      "ease-out",
-      "opacity-100",
-      "bg-black",
-      "transform",
-      "scale-100",
-      "rotate-0",
-      "forward"
-    ];
-
+  const effectOut = [
+    "transition-all",
+    "duration-300",
+    "delay-0",
+    "ease-out",
+    "opacity-100",
+    "bg-black",
+    "transform",
+    "scale-100",
+    "rotate-0",
+    "forward",
+  ];
 
   function handleEnter(e) {
     const image = e.target.firstElementChild;
-    image.classList.add(...effectIn)
-    image.classList.remove(...effectOut)
+    image.classList.add(...effectIn);
+    image.classList.remove(...effectOut);
   }
 
   function handleLeave(e) {
     const image = e.target.firstElementChild;
-    image.classList.remove(...effectIn)
-    image.classList.add(...effectOut)
+    image.classList.remove(...effectIn);
+    image.classList.add(...effectOut);
   }
-
 
   projects.forEach((project) =>
     project.addEventListener("mouseenter", handleEnter)
   );
 
- 
-
-  projects.forEach(project =>
+  projects.forEach((project) =>
     project.addEventListener("mouseleave", handleLeave)
   );
-  
 </script>
