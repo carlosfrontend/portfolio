@@ -1,7 +1,6 @@
 ---
 // Supports weights 100-900
 import "@fontsource-variable/inter";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import "devicon/devicon.min.css";
@@ -65,11 +64,11 @@ const { title, description } = Astro.props;
 
     @media (prefers-color-scheme: dark) {
       .dark body {
-        background: rgb(7, 7, 9);
+       
         background-image: linear-gradient(
           90deg,
-          rgba(7, 7, 9, 1) 0%,
-          rgba(25, 21, 98, 1) 100%
+          rgb(15, 15, 15) 0%,
+          rgb(21, 23, 24) 100%
         );
       }
 
@@ -79,3 +78,20 @@ const { title, description } = Astro.props;
     }
   </style>
 </html>
+<script is:inline>
+  // Close the language selector dropdown when the window is clicked in other place
+  window.addEventListener("click", (e) => {
+    const dropdownContainer = document.querySelector("#dropdownDefaultButton");
+    const dropdown = document.querySelector("#dropdown");
+    if (!dropdownContainer.contains(e.target)) {
+      dropdown.classList.remove("visible");
+    }
+  });
+
+  window.addEventListener("click", (e) => {
+    const dropdownSmartphone = document.querySelector("#dropdownSmartphone");
+    if (!dropdownContainer.contains(e.target)) {
+      dropdownSmartphone.classList.remove("visible");
+    }
+  });
+</script>
