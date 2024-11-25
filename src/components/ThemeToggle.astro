@@ -3,7 +3,7 @@ import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
 import SystemIcon from "./icons/System.astro";
 
-const THEMES = ["Light", "Dark", "System"];
+let THEMES = ["Claro", "Oscuro", "Sistema"];
 ---
 
 <div class="relative ml-1 mr-1">
@@ -28,7 +28,7 @@ const THEMES = ["Light", "Dark", "System"];
     id="themes-menu"
     class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-neutral-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
-    <ul>
+    <ul class="theme-menu-items">
       {
         THEMES.map((theme) => (
           <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
@@ -104,18 +104,47 @@ const THEMES = ["Light", "Dark", "System"];
 
   document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
     e.stopPropagation();
+    const currentLang = document.documentElement.getAttribute("lang");
+    const themesMenuOptions = document.querySelectorAll(".themes-menu-option");
+    for (let i = 0; i <= 2; i++) {
+      if (currentLang === "en") {
+        const THEMES = ["Light", "Dark", "System"];
+        themesMenuOptions[i].textContent = THEMES[i];
+      } else {
+        const THEMES = ["Claro", "Oscuro", "Sistema"];
+        themesMenuOptions[i].textContent = THEMES[i];
+      }
+    }
     const isClosed = !themesMenu.classList.contains("open");
     themesMenu.classList[isClosed ? "add" : "remove"]("open");
-    if(themesMenu.classList.contains('open')){
-      document.querySelector('#dropdown').classList.remove('visible');
-      document.querySelector('#dropdownSmartphone').classList.remove('visible');
+    if (themesMenu.classList.contains("open")) {
+      document.querySelector("#dropdown").classList.remove("visible");
+      document.querySelector("#dropdownSmartphone").classList.remove("visible");
     }
   });
 
   document.querySelectorAll(".themes-menu-option").forEach((element) => {
     element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim());
-      updateTheme();
+      const currentLang = document.documentElement.getAttribute("lang");
+      let option = e.target.textContent;
+
+      if (currentLang === "es" && option === "Claro") {
+        option = "light";
+        localStorage.setItem("theme", option);
+        updateTheme();
+      } else if (currentLang === "es" && option === "Oscuro") {
+        option = "dark";
+        localStorage.setItem("theme", option);
+        updateTheme();
+      } else if (currentLang === "es" && option === "Sistema") {
+        option = "system";
+        localStorage.setItem("theme", option);
+      }
+
+      if (currentLang !== "es") {
+        localStorage.setItem("theme", e.target.innerText.toLowerCase().trim());
+        updateTheme();
+      }
     });
   });
 

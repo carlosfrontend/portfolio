@@ -37,7 +37,7 @@ const primaryNavItems = [
 ---
 
 <nav
-  class="fixed h-14 w-screen top:0 z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center dark:text-white text-slate-600 dark:bg-neutral-900 bg-white tablet:w-screen tablet:h-auto tablet:mx-auto desktop:w-8/12 desktop:self-center desktop:rounded-b-xl desktop:border-transparent"
+  class="fixed h-14 w-screen top:0 z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center dark:text-white text-slate-600 dark:bg-[#121212f0] bg-white/95 tablet:w-screen tablet:h-auto tablet:mx-auto desktop:w-8/12 desktop:self-center desktop:rounded-b-xl desktop:border-transparent"
 >
   <div class="flex justify-evenly items-center text-xs py-2 px-2">
     {
@@ -49,6 +49,6 @@ const primaryNavItems = [
     }
 
     <LanguageSelector currentLang={currentLang} client:load />
-    <ThemeToggle />
+    <ThemeToggle/>
   </div>
 </nav>

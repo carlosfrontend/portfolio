@@ -27,7 +27,7 @@ const sections = [
 ---
 
 <Layout
-  title="Porfolio de Carlos Pulido Desarrollador y Programador Web - Página principal."
+  title="Portafolio de Carlos Pulido Desarrollador y Programador Web - Página principal."
   description="Contrata a Carlos Pulido para crear aplicaciones web o móviles."
 >
   <main class="relative pt-4 w-full desktop:w-8/12 desktop:self-center">
@@ -41,7 +41,7 @@ const sections = [
       sections.map((section) => (
         <SectionContainer id={section.id} className="pt-36">
           {section.name === translateLabels('projects.title') ? (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-14 font-bold  dark:text-teal-400 text-slate-800">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-14 font-bold  dark:text-lime-300 text-slate-800">
               <span>
                 <svg
                   class="size-8"
@@ -61,7 +61,7 @@ const sections = [
               {section.name}
             </h3>
           ) : section.name === translateLabels('about.title') ? (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-4 font-bold dark:text-teal-400 text-slate-800">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-4 font-bold dark:text-lime-300 text-slate-800">
               <span>
                 <svg
                   class="size-8"
@@ -80,18 +80,28 @@ const sections = [
               </span>
               {section.name}
             </h3>
-             <p class="text-xl font-normal text-pretty dark:text-gray-500 text-gray-700">
-            {translateLabels('about.bring')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
-            >{translateLabels('about.softSkills')}</strong> {translateLabels('about.knowledge')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold">{translateLabels('about.webInterfaces')}</strong> {translateLabels('about.combine')} <strong class="dark:text-yellow-200/80 text-slate-700 font-bold"
+            <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-gray-700">{translateLabels('about.start')} <i class="dark:text-yellow-200">{translateLabels('about-var')}</i> {translateLabels('about.define')} <strong class="dark:text-yellow-200">{translateLabels('about.javascript')}</strong>.</p>
+
+            <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-gray-700">{translateLabels('about.health')}</p>
+
+            <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-gray-700">{translateLabels('about.want')} <strong class="dark:text-yellow-200">{translateLabels('about.trajectory')}</strong> {translateLabels('about.to')} <strong class="dark:text-yellow-200">{translateLabels('about.frontend')}</strong>{translateLabels('about.passion')}</p>
+
+             <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-gray-700">
+            {translateLabels('about.bring')} <strong class="dark:text-yellow-200 text-slate-700 font-bold"
+            >{translateLabels('about.softSkills')}</strong> {translateLabels('about.knowledge')} <strong class="dark:text-yellow-200 text-slate-700 font-bold">{translateLabels('about.webInterfaces')}</strong> {translateLabels('about.combine')} <strong class="dark:text-yellow-200 text-slate-700 font-bold"
             >{translateLabels('about.design')}</strong>.
         </p>
-        <p class="text-xl font-normal text-pretty dark:text-gray-500 text-slate-700">
+        <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-slate-700">
           {translateLabels('about.curiosity')} <span
-            class="dark:text-yellow-200/80 text-slate-700 font-bold">{translateLabels('about.learn')}</span
-          > {translateLabels('about.connect')}
+            class="dark:text-yellow-200 text-slate-700 font-bold">{translateLabels('about.learn')}</span
+          >
+        </p>
+
+        <p class="pb-3 text-xl font-normal text-pretty dark:text-blue-300 text-slate-700">
+          {translateLabels('about.mountains')} <strong class="dark:text-yellow-200">{translateLabels('about.hiking')}</strong> {translateLabels('about.disconnect')}
         </p>
           ) : (
-            <h3 class="text-3xl flex items-center gap-x-2 pb-4 font-bold dark:text-teal-400 text-slate-800">
+            <h3 class="text-3xl flex items-center gap-x-2 pb-4 font-bold dark:text-lime-300 text-slate-800">
               <span>
                 <svg
                   class="size-8"

@@ -14,7 +14,6 @@ export const labels = {
     "nav.aria.changeEsLanguage": "Cambiar idioma a Español",
     "nav.aria.changeEnLanguage": "Cambiar idioma a Inglés",
     "nav.aria.changeTheme": "Cambiar el tema de color",
-    "nav.THEMES": "Claro , Oscuro , Sistema",
     "header.title": "Disponible para trabajar",
     "home.title": "Inicio",
     "projects.title": "Proyectos",
@@ -53,9 +52,23 @@ export const labels = {
     "about.combine": "que combinan",
     "about.design": "diseño intuitivo y funcionalidad",
     "about.curiosity": "Mi curiosidad y dedicación me impulsan a",
-    "about.learn": "aprender constantemente",
-    "about.connect":
-      "y a conectar con las necesidades de las personas a través de la tecnologías.",
+    "about.learn": "aprender constantemente.",
+    "about.start":
+      "Empecé a programar allá por el año 2016 cuando todavía usabamos la palabra reservada",
+    "about-var": "var",
+    "about.define": "para definir variables en",
+    "about.javascript": "Javascript",
+    "about.health":
+      "Recientemente vengo del mundo administrativo en el sector sanitario.",
+    "about.want": "Quiero dar un",
+    "about.trajectory": "salto en mi trayectoria profesional",
+    "about.to": "hacia el",
+    "about.frontend": "desarrollo frontend, ",
+    "about.passion": " ya que es lo que realmente me apasiona.",
+    "about.mountains":
+      "En mi  tiempo libre me gusta salir a la montaña 🥾🌄🌲, ya que",
+    "about.hiking": "me encanta hacer senderismo",
+    "about.disconnect": "para desconectar y reconectar 🎒🏕️📸 .",
   },
   en: {
     "nav.home": "Home",
@@ -67,7 +80,6 @@ export const labels = {
     "nav.aria.changeEsLanguage": "Change to Spanish language",
     "nav.aria.changeEnLanguage": "Change to English language",
     "nav.aria.changeTheme": "Change the color theme",
-    "nav.THEMES": "Light, Dark, System",
     "header.title": "Available to work",
     "home.title": "Home",
     "projects.title": "Projects",
@@ -106,7 +118,22 @@ export const labels = {
     "about.combine": "that combine",
     "about.design": "intuitive design and functionality",
     "about.curiosity": "My curiosity and dedication drive me to",
-    "about.learn": "constantly learn",
-    "about.connect": "and connect with people's needs through technology.",
+    "about.learn": "constantly learn.",
+    "about.start":
+      "I started programming back in 2016 when we still use the reserved word",
+    "about-var": "var",
+    "about.define": "to define variables in",
+    "about.javascript": "Javascript",
+    "about.health":
+      "I recently came from the administrative world in the healthcare sector.",
+    "about.want": "I want to take",
+    "about.trajectory": "a leap in my career",
+    "about.to": "towards",
+    "about.frontend": "frontend development,",
+    "about.passion": " since it is what I am really passionate about.",
+    "about.mountains":
+      "In my free time I like to go out to the mountains 🥾🌄🌲, since",
+    "about.hiking": " I love hiking",
+    "about.disconnect": "to disconnect and reconnect. 🎒🏕️📸 .",
   },
 };

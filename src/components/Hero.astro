@@ -22,21 +22,21 @@ const translateLabels = useTranslations(
   >
 </h1>
 <h2
-  class="w-full mx-auto text-pretty font-normal dark:text-gray-500 text-gray-800 py-4 text-xl"
+  class="w-full mx-auto text-pretty font-normal dark:text-blue-300 text-gray-800 py-4 text-xl"
 >
   <strong class="dark:text-yellow-200 text-slate-700 font-bold"
     >{translateLabels("hero.profession")}</strong
   >
   {translateLabels("hero.location")}
 </h2>
-<p class="w-full mx-auto dark:dark:text-gray-500 text-gray-800 py-1 text-xl">
+<p class="w-full mx-auto dark:dark:text-blue-300 text-gray-800 py-1 text-xl">
   {translateLabels("hero.haveSpent")}
-  <strong class="dark:text-yellow-200/70 text-slate-700 font-bold"
+  <strong class="dark:text-yellow-200/90 text-slate-700 font-bold"
     >{translateLabels("hero.timeOfStudy")}</strong
   >
   {translateLabels("hero.thanks")}
   <a
-    class="text-slate-800/80 border-b-2 dark:dark:text-gray-500 dark:hover:text-gray-400 dark:border-b-gray-500 border-b-slate-800/80 hover:border-b-slate-900 dark:hover:border-b-gray-400 hover:text-slate-900"
+    class="text-slate-800/80  dark:dark:text-blue-300 transition-all duration-300 dark:hover:text-yellow-200 dark:border-b-blue-500 border-b-4 border-b-slate-800/80 hover:border-b-slate-900 dark:hover:border-b-yellow-200/90 hover:text-slate-900"
     href="https://www.theodinproject.com/"
     rel="noopener noreferrer"
     target="_blank"
@@ -45,7 +45,7 @@ const translateLabels = useTranslations(
   >
 </p>
 
-<p class="w-full mx-auto dark:text-gray-500 text-gray-800 py-1 text-xl">
+<p class="w-full mx-auto dark:text-yellow-500 text-gray-800 py-1 text-xl">
   {translateLabels("hero.optionsText")}
 </p>
 
@@ -53,13 +53,13 @@ const translateLabels = useTranslations(
   class="flex w-full flex-col tablet:w-[400px] tablet:gap-6 desktop:w-[400px] justify-start gap-4 pt-6"
 >
   <a
-    class="flex w-[200px] h-10 items-center justify-center dark:bg-sky-700 dark:ring dark:ring-sky-200  dark:text-slate-300 bg-slate-700 text-md font-semibold gap-2 rounded-md"
+    class="flex w-[200px] h-10 items-center justify-center bg-sky-700 ring transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out ring-sky-200  text-slate-300 text-md font-semibold gap-2 rounded-md"
     href={currentLang === "es" ? "/resume_es.pdf" : "/resume_en.pdf"}
     target="_blank"
     ><span><ResumeIcon /></span>{translateLabels("hero.cvButton")}</a
   >
   <a
-    class="flex w-[200px] h-10 items-center justify-center dark:bg-emerald-700 dark:ring  dark:ring-emerald-200 dark:text-slate-300 bg-slate-700 text-md font-semibold gap-2 rounded-md"
+    class="flex w-[200px] h-10 items-center justify-center bg-emerald-700 ring transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out  ring-emerald-200 text-slate-300 text-md font-semibold gap-2 rounded-md"
     href="mailto:carlosfrontend@hotmail.com"
     ><EmailIcon />{translateLabels("hero.sendEmail")}</a
   >
