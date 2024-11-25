@@ -50,10 +50,19 @@ const { title, description } = Astro.props;
     }
 
     body {
+      background-color: #f8f8f9;
       min-height: 100vh;
       overscroll-behavior: none;
       display: flex;
       flex-direction: column;
+    }
+
+    .dark body {
+        background-image: linear-gradient(
+          90deg,
+          rgb(15, 15, 15) 0%,
+          rgb(21, 23, 24) 100%
+        );
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -64,16 +73,14 @@ const { title, description } = Astro.props;
 
     @media (prefers-color-scheme: dark) {
       .dark body {
-       
         background-image: linear-gradient(
           90deg,
           rgb(15, 15, 15) 0%,
           rgb(21, 23, 24) 100%
         );
       }
-
       body {
-        background-color: #f8f8f9; /** light background **/
+        background-color: #f8f8f9;
       }
     }
   </style>

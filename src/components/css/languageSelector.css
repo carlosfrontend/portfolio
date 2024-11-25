@@ -3,7 +3,7 @@
   display: block;
   animation: expand 500ms ease-in-out;
   transform-origin: top;
-  top:100%
+  top:3.1em;
 }
 
 #dropdownDefaultButtonSmartphone{
@@ -12,7 +12,7 @@
 
 #dropdownSmartphone{
   position: absolute;
-  top:2em;
+  top:2.8em;
 }
 #dropdown{
  position: absolute;

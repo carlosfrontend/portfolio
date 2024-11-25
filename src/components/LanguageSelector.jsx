@@ -2,33 +2,42 @@ import "../components/css/languageSelector.css";
 import { useTranslations } from "../i18n/utils";
 
 const LanguageSelector = ({ currentLang }) => {
-  const translateLabels = useTranslations(currentLang)
-  
+  const translateLabels = useTranslations(currentLang);
+
   function handleBigSelector(e) {
+    e.stopPropagation();
+    const themesMenu = document.getElementById("themes-menu");
     const dropDownDefault = document.querySelector("#dropdownDefaultButton");
     const dropdownMenu = document.querySelector("#dropdown");
+
     if (e.currentTarget === dropDownDefault) {
+      themesMenu.classList.remove("open");
       dropdownMenu.classList.toggle("visible");
     }
   }
-  
+
   function handleSmallSelector(e) {
+    e.stopPropagation();
+    const themesMenu = document.getElementById("themes-menu");
     const dropDownDefault = document.querySelector(
       "#dropdownDefaultButtonSmartphone"
     );
     const dropdownMenu = document.querySelector("#dropdownSmartphone");
+
     if (e.currentTarget === dropDownDefault) {
+      themesMenu.classList.remove("open");
       dropdownMenu.classList.toggle("visible");
     }
   }
-  
+
   return (
     <div id="dropdownContainer" className="relative inline-block">
       <button
+        transition:persist="true"
         title={translateLabels("nav.aria.changeLanguage")}
         onClick={handleBigSelector}
         id="dropdownDefaultButton"
-        className="w-30 text-white bg-gray-800 hover:bg-gray-700 focus:outline-none font-medium text-sm px-3 py-1 text-center inline-flex items-center justify-baseline dark:bg-white dark:hover:bg-white/90 dark:text-black"
+        className="w-30 text-black bg-white/90 focus:outline-none font-medium text-sm px-3 py-1 text-center inline-flex items-center justify-baseline dark:bg-neutral-900 dark:text-white/80"
         type="button"
       >
         <svg
@@ -49,7 +58,7 @@ const LanguageSelector = ({ currentLang }) => {
           <path d="M12 20l4 -9l4 9" />
           <path d="M19.1 18h-6.2" />
         </svg>
-        {translateLabels('nav.language')}{" "}
+        {translateLabels("nav.language")}{" "}
         <svg
           className="w-2.5 h-2.5 ms-3"
           aria-hidden="true"
@@ -66,6 +75,7 @@ const LanguageSelector = ({ currentLang }) => {
         </svg>
       </button>
       <button
+      transition:persist="true"
         onClick={handleSmallSelector}
         id="dropdownDefaultButtonSmartphone"
       >
@@ -91,16 +101,17 @@ const LanguageSelector = ({ currentLang }) => {
 
       <div
         id="dropdown"
-        className="z-10 hidden rounded-b-md  bg-black top-4 w-full dark:bg-gray-700"
+        transition:persist="true"
+        className="z-10 hidden rounded-md  bg-white/90 top-4 w-full shadow-md dark:bg-gray-700 border-gray-500/20 border-[1.5px]"
       >
         <ul
-          className=" rounded-b-lg py-2 w-full dark:bg-white dark:text-black text-sm text-white"
+          className="rounded-md p-1 w-full dark:bg-neutral-900 dark:text-white/90 text-sm text-black"
           aria-labelledby="dropdownDefaultButton"
         >
           <li>
             <a
               href="/es/"
-              className="hover:bg-white hover:text-black block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:bg-neutral-400/40 hover:text-black block px-4 py-2 dark:hover:bg-gray-500/50 dark:hover:text-white rounded-sm"
             >
               {currentLang === "es" ? "Español" : "Spanish"}
             </a>
@@ -108,7 +119,7 @@ const LanguageSelector = ({ currentLang }) => {
           <li>
             <a
               href="/en/"
-              className="hover:bg-white hover:text-black block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:bg-neutral-400/40 hover:text-black block px-4 py-2 dark:hover:bg-gray-500/50 dark:hover:text-white rounded-sm"
             >
               {currentLang !== "es" ? "English" : "Inglés"}
             </a>
@@ -117,24 +128,25 @@ const LanguageSelector = ({ currentLang }) => {
       </div>
       <div
         id="dropdownSmartphone"
-        className="z-10 hidden bg-black top-4 right-0 w-[110px] dark:bg-gray-700 rounded-md"
+        transition:persist="true"
+        className="z-10 hidden bg-white top-4 right-0 w-[110px] dark:bg-gray-700 rounded-md"
       >
         <ul
-          className=" py-2 w-full dark:bg-white dark:text-black text-sm text-white rounded-md"
+          className=" py-0 w-full dark:bg-neutral-900 dark:text-white/90 border-gray-500/20 border-[1.5px] text-sm text-gray-900 rounded-md"
           aria-labelledby="dropdownDefaultButton"
         >
-          <li>
+          <li className="p-1">
             <a
               href="/es/"
-              className="hover:bg-white hover:text-black block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:bg-gray-500/20 hover:text-black block px-4 py-1 dark:hover:bg-gray-500/50 dark:hover:text-white rounded-sm"
             >
               {currentLang === "es" ? "Español" : "Spanish"}
             </a>
           </li>
-          <li>
+          <li className="p-1">
             <a
               href="/en/"
-              className="hover:bg-white hover:text-black block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:bg-gray-500/20 hover:text-black block px-4 py-1 dark:hover:bg-gray-500/50 dark:hover:text-white rounded-sm"
             >
               {currentLang !== "es" ? "English" : "Inglés"}
             </a>
