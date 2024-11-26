@@ -37,7 +37,7 @@ const LanguageSelector = ({ currentLang }) => {
         title={translateLabels("nav.aria.changeLanguage")}
         onClick={handleBigSelector}
         id="dropdownDefaultButton"
-        className="w-30 text-black bg-white/90 focus:outline-none font-medium text-sm px-3 py-1 text-center inline-flex items-center justify-baseline dark:bg-neutral-900 dark:text-white/80"
+        className="w-30 text-black bg-white/90 focus:outline-none font-medium text-sm tablet:text-lg px-3 py-1 text-center inline-flex items-center justify-baseline dark:bg-neutral-900 dark:text-white/80"
         type="button"
       >
         <svg

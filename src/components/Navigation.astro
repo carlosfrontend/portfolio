@@ -10,7 +10,7 @@ const translateLabels = useTranslations(
 );
 
 const buttonTransition =
-  "transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:font-medium hover:scale-115 dark:text-white/80 dark:hover:text-white dark:text-white text-[15px]";
+  "transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:font-medium hover:scale-115 dark:text-white/80 dark:hover:text-white dark:text-white text-[15px] text-xs tablet:text-lg";
 
 const primaryNavItems = [
   {
@@ -42,7 +42,7 @@ const primaryNavItems = [
   <div class="flex justify-evenly items-center text-xs py-2 px-2">
     {
       primaryNavItems.map((link) => (
-        <a class={`tablet:text-base ${link.class}`} href={link.url}>
+        <a class={`${link.class}`} href={link.url}>
           {link.title}
         </a>
       ))
