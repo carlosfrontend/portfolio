@@ -4,11 +4,11 @@ This repository is to host the code for my personal portfolio project.
 
 ## Screenshots
 
-![lightMode](https://github.com/user-attachments/assets/43e40578-e92f-4253-8f10-bc45409a5622)
+![LightMode](https://github.com/user-attachments/assets/61c4fbaf-9145-43fa-9be1-2b96cbdf220a)
 
 ###
 
-![darkMode](https://github.com/user-attachments/assets/3ade6928-7706-42d8-b12f-8e8c60775f46)
+![DarkMode](https://github.com/user-attachments/assets/0dc212f1-77ec-4ea2-a596-e56359ca784f)
 
 ## Features
 
@@ -34,6 +34,6 @@ It is the first time I work with technologies like Astro, Tailwind and MDX... Th
 
 ## Demo
 
-![animation](https://github.com/user-attachments/assets/e8e67dcd-5a44-4ace-b8d0-8280f7543578)
+![animation](https://github.com/user-attachments/assets/8054f178-6b74-428d-963f-513645be16ea)
 
-## [Live Preview](https://carlospulido.netlify.app/es/)
+## [Live Preview](https://carlospulido.netlify.app)

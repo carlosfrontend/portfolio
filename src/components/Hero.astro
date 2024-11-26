@@ -22,14 +22,14 @@ const translateLabels = useTranslations(
   >
 </h1>
 <h2
-  class="w-full mx-auto text-pretty font-normal dark:text-blue-300 text-gray-800 py-4 text-xl"
+  class="w-full mx-auto text-pretty font-normal dark:text-white text-gray-800 py-4 text-xl"
 >
   <strong class="dark:text-yellow-200 text-slate-700 font-bold"
     >{translateLabels("hero.profession")}</strong
   >
   {translateLabels("hero.location")}
 </h2>
-<p class="w-full mx-auto dark:dark:text-blue-300 text-gray-800 py-1 text-xl">
+<p class="w-full mx-auto dark:dark:text-white text-gray-800 py-1 text-xl">
   {translateLabels("hero.haveSpent")}
   <strong class="dark:text-yellow-200/90 text-slate-700 font-bold"
     >{translateLabels("hero.timeOfStudy")}</strong
@@ -53,13 +53,13 @@ const translateLabels = useTranslations(
   class="flex w-full flex-col tablet:w-[400px] tablet:gap-6 desktop:w-[400px] justify-start gap-4 pt-6"
 >
   <a
-    class="flex w-[200px] h-10 items-center justify-center bg-sky-700 ring transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out ring-sky-200  text-slate-300 text-md font-semibold gap-2 rounded-md"
+    class="flex w-[200px] h-10 items-center justify-center bg-teal-800 transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out dark:ring-white ring-slate-950  text-slate-100 text-md font-semibold gap-2 rounded-md"
     href={currentLang === "es" ? "/resume_es.pdf" : "/resume_en.pdf"}
     target="_blank"
     ><span><ResumeIcon /></span>{translateLabels("hero.cvButton")}</a
   >
   <a
-    class="flex w-[200px] h-10 items-center justify-center bg-emerald-700 ring transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out  ring-emerald-200 text-slate-300 text-md font-semibold gap-2 rounded-md"
+    class="flex w-[200px] h-10 items-center justify-center bg-blue-800 transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out  dark:ring-white ring-slate-950 text-slate-100 text-md font-semibold gap-2 rounded-md"
     href="mailto:carlosfrontend@hotmail.com"
     ><EmailIcon />{translateLabels("hero.sendEmail")}</a
   >

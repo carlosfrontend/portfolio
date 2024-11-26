@@ -33,7 +33,7 @@ const ButtonToast = ({ currentLang }) => {
           }}
           type="button"
           id="copyEmailButton"
-          className="flex w-[200px] h-10 items-center justify-center bg-indigo-700 ring transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out ring-indigo-200 text-slate-300 text-md font-semibold gap-2 rounded-md"
+          className="flex w-[200px] h-10 items-center justify-center bg-pink-800 transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out ring-slate-950 dark:ring-white text-slate-100 text-md font-semibold gap-2 rounded-md"
         >
           <span>
             <CopyIcon />
