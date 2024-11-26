@@ -34,6 +34,6 @@ It is the first time I work with technologies like Astro, Tailwind and MDX... Th
 
 ## Demo
 
-![animation](https://github.com/user-attachments/assets/8054f178-6b74-428d-963f-513645be16ea)
+![animation](https://github.com/user-attachments/assets/1abf9fa4-ec8b-4f06-a75d-ca54d2f1aa75)
 
 ## [Live Preview](https://carlospulido.netlify.app)
