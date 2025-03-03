@@ -56,7 +56,7 @@ const projects = await getCollection("projects", ({ id }) => {
       {
         section.name === translateLabels("otherProjects.name") &&
           projects
-            .slice(3, 8)
+            .slice(3, 9)
             .map((project) => (
               <CardProject
                 title={project.data.title}
@@ -68,7 +68,7 @@ const projects = await getCollection("projects", ({ id }) => {
                 liveLink={project.data.liveLink}
                 tags={project.data.tags}
               />
-            ))
+            )).reverse()
       }
     </SectionContainer>
   </main>
