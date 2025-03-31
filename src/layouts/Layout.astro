@@ -1,11 +1,11 @@
 ---
 // Supports weights 100-900
-import "@fontsource-variable/inter";
-import Footer from "../components/Footer.astro";
-import Navigation from "../components/Navigation.astro";
-import "devicon/devicon.min.css";
-import { ViewTransitions } from "astro:transitions";
-const currentLang = Astro.currentLocale || "es";
+import '@fontsource-variable/inter';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+import 'devicon/devicon.min.css';
+import { ClientRouter } from 'astro:transitions';
+const currentLang = Astro.currentLocale || 'es';
 
 interface Props {
   title: string;
@@ -18,27 +18,27 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang={currentLang}>
   <head>
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta charset="UTF-8" />
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <meta charset='UTF-8' />
+    <meta name='title' content={title} />
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
   <body>
     <Navigation />
-    <slot transition:animate="slide" />
+    <slot transition:animate='slide' />
     <Footer />
   </body><style is:global>
     :root {
       color-scheme: light dark;
     }
     html {
-      font-family: "Inter Variable", system-ui, sans-serif;
+      font-family: 'Inter Variable', system-ui, sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
@@ -87,18 +87,18 @@ const { title, description } = Astro.props;
 </html>
 <script is:inline>
   // Close the language selector dropdown when the window is clicked in other place
-  window.addEventListener("click", (e) => {
-    const dropdownContainer = document.querySelector("#dropdownDefaultButton");
-    const dropdown = document.querySelector("#dropdown");
+  window.addEventListener('click', (e) => {
+    const dropdownContainer = document.querySelector('#dropdownDefaultButton');
+    const dropdown = document.querySelector('#dropdown');
     if (!dropdownContainer.contains(e.target)) {
-      dropdown.classList.remove("visible");
+      dropdown.classList.remove('visible');
     }
   });
 
-  window.addEventListener("click", (e) => {
-    const dropdownSmartphone = document.querySelector("#dropdownSmartphone");
+  window.addEventListener('click', (e) => {
+    const dropdownSmartphone = document.querySelector('#dropdownSmartphone');
     if (!dropdownContainer.contains(e.target)) {
-      dropdownSmartphone.classList.remove("visible");
+      dropdownSmartphone.classList.remove('visible');
     }
   });
 </script>
