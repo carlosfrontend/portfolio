@@ -29,10 +29,26 @@ const { title, description } = Astro.props;
     <meta name='theme-color' content='#342646' />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta property='og:image' content='/images/yo.png' />
+    <meta
+      property='og:image'
+      content='https://carlospulido.netlify.app/yo.png'
+    />
     <meta property='og:image:alt' content='Una fotografía de Carlos Frontend' />
     <meta property='og:url' content='https://carlospulido.netlify.app' />
     <meta property='og:type' content='website' />
+    <!-- Twitter Meta Tags -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='twitter:domain' content='carlospulido.netlify.app' />
+    <meta
+      property='twitter:url'
+      content='https://carlospulido.netlify.app/es/'
+    />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta
+      name='twitter:image'
+      content='https://carlospulido.netlify.app/yo.png'
+    />
     <link
       rel='alternate'
       hreflang='en'
