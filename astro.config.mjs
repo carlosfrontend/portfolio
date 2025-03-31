@@ -1,21 +1,21 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import react from "@astrojs/react";
+import react from '@astrojs/react';
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind';
 
-import mdx from "@astrojs/mdx";
+import mdx from '@astrojs/mdx';
 
-import netlify from "@astrojs/netlify";
+import netlify from '@astrojs/netlify';
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
-    enabled: false,
+    enabled: false
   },
-  site: "https://carlospulido.netlify.app",
+  site: 'https://carlospulido.netlify.app',
 
   integrations: [
     react({ experimentalReactChildren: true }),
@@ -23,27 +23,27 @@ export default defineConfig({
     mdx(),
     sitemap({
       i18n: {
-        defaultLocale: "es",
+        defaultLocale: 'es',
         locales: {
-          es: "es-ES",
-          en: "en-US",
-        },
-      },
-    }),
+          es: 'es-ES',
+          en: 'en-GB'
+        }
+      }
+    })
   ],
 
   i18n: {
-    defaultLocale: "es",
-    locales: ["es", "en"],
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
     routing: {
-      prefixDefaultLocale: true,
-    },
+      prefixDefaultLocale: true
+    }
   },
   image: {
-    domains: ["astro.build"],
-    remotePatterns: [{ protocol: "https" }],
+    domains: ['astro.build'],
+    remotePatterns: [{ protocol: 'https' }]
   },
 
-  output: "server",
-  adapter: netlify(),
+  output: 'server',
+  adapter: netlify()
 });

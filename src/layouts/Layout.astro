@@ -25,6 +25,22 @@ const { title, description } = Astro.props;
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
+    <meta name='robots' content='index, follow' />
+    <meta name='theme-color' content='#342646' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content='/images/yo.png' />
+    <meta property='og:image:alt' content='Una fotografía de Carlos Frontend' />
+    <meta property='og:url' content='https://carlospulido.netlify.app' />
+    <meta property='og:type' content='website' />
+    <link
+      rel='alternate'
+      hreflang='en'
+      href='https://carlospulido.netlify.app/en'
+      hreflang='en-GB'
+    />
+    <link rel='canonical' href='https://carlospulido.netlify.app' />
+
     <title>{title}</title>
     <ClientRouter />
   </head>
