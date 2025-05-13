@@ -54,7 +54,9 @@ const translateLabels = useTranslations(
 >
   <a
     class='flex w-[200px] h-10 items-center justify-center bg-teal-800 transition-all duration-200 hover:scale-105 hover:ring-4 ease-in-out dark:ring-white ring-slate-950 text-slate-100 text-md font-semibold gap-2 rounded-md'
-    href={currentLang === 'es' ? '/resume_es.pdf' : '/resume_en.pdf'}
+    href={currentLang === 'es'
+      ? '/Carlos_Pulido_CV_ES_.pdf'
+      : '/Carlos_Pulido_CV_EN.pdf'}
     target='_blank'
     ><span><ResumeIcon /></span>{translateLabels('hero.cvButton')}</a
   >
