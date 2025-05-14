@@ -10,6 +10,8 @@ import netlify from '@astrojs/netlify';
 
 import sitemap from '@astrojs/sitemap';
 
+import compressor from 'astro-compressor';
+
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
@@ -29,7 +31,8 @@ export default defineConfig({
           en: 'en-GB'
         }
       }
-    })
+    }),
+    compressor({ gzip: true, brotli: false })
   ],
 
   i18n: {
