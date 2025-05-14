@@ -80,6 +80,8 @@ const LanguageSelector = ({ currentLang }) => {
         transition:persist='true'
         onClick={handleSmallSelector}
         id='dropdownDefaultButtonSmartphone'
+        arria-label={translateLabels('nav.aria.changeLanguage')}
+        title={translateLabels('nav.aria.changeLanguage')}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
