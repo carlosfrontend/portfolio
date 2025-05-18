@@ -32,7 +32,7 @@ export default defineConfig({
         }
       }
     }),
-    compressor({ gzip: false, brotli: true, })
+    compressor({ gzip: true, brotli: true, })
   ],
 
   i18n: {
