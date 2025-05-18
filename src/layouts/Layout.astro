@@ -67,55 +67,48 @@ const { title, description } = Astro.props;
     <Navigation />
     <slot transition:animate='slide' />
     <Footer />
-  </body><style is:global>
-    html {
-      font-family: 'Inter Variable', system-ui, sans-serif;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    html,
-    body {
-      height: 100%;
-      width: 100%;
-    }
-
-    body {
-      background-color: #f8f8f9;
-      min-height: 100vh;
-      overscroll-behavior: none;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .dark body {
-      background-image: linear-gradient(
-        90deg,
-        rgb(63 44 87) 0%,
-        rgb(21, 23, 24) 100%
-      );
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .dark body {
-        background-image: linear-gradient(
-          90deg,
-          rgb(63 44 87) 0%,
-          rgb(21, 23, 24) 100%
-        );
-      }
-      body {
-        background-color: #f8f8f9;
-      }
-    }
-  </style>
+  </body>
 </html>
+
+<style is:global>
+  /*   :root {
+    color-scheme: dark light;
+  } */
+  html {
+    font-family: 'Inter Variable', system-ui, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-color: #f8f8f9;
+  }
+
+  .dark body {
+    background: linear-gradient(90deg, rgb(63 44 87) 0%, rgb(21, 23, 24) 100%);
+    min-height: 100vh;
+    overscroll-behavior: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .dark body {
+      background-color: black;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
 <script is:inline>
   // Close the language selector dropdown when the window is clicked in other place
   window.addEventListener('click', (e) => {
