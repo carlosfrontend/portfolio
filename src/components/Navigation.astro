@@ -1,45 +1,45 @@
 ---
-const currentLang = Astro.currentLocale || "es";
-import { useTranslations } from "../i18n/utils";
-import { languageList } from "../i18n/ui";
-import LanguageSelector from "./LanguageSelector";
-import ThemeToggle from "./ThemeToggle.astro";
+const currentLang = Astro.currentLocale || 'es';
+import { useTranslations } from '../i18n/utils';
+import { languageList } from '../i18n/ui';
+import LanguageSelector from './LanguageSelector';
+import ThemeToggle from './ThemeToggle.astro';
 
 const translateLabels = useTranslations(
   currentLang as keyof typeof languageList
 );
 
 const buttonTransition =
-  "transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:font-medium hover:scale-115 dark:text-white/80 dark:hover:text-white dark:text-white text-[15px] text-xs tablet:text-lg";
+  'transition transform duration-100 ease-in-out delay-50  hover:text-slate-950 hover:font-medium hover:scale-115 dark:text-white/80 dark:hover:text-white dark:text-white text-[15px] text-xs tablet:text-lg';
 
 const primaryNavItems = [
   {
-    title: translateLabels("nav.home"),
-    url: `/${currentLang}/${translateLabels("home.anchor")}`,
-    class: buttonTransition,
+    title: translateLabels('nav.home'),
+    url: `/${currentLang}/${translateLabels('home.anchor')}`,
+    class: buttonTransition
   },
   {
-    title: translateLabels("nav.projects"),
-    url: `/${currentLang}/${translateLabels("projects.url")}`,
-    class: buttonTransition,
+    title: translateLabels('nav.projects'),
+    url: `/${currentLang}/${translateLabels('projects.url')}`,
+    class: buttonTransition
   },
   {
-    title: translateLabels("nav.about"),
-    url: `/${currentLang}/${translateLabels("about.url")}`,
-    class: buttonTransition,
+    title: translateLabels('nav.about'),
+    url: `/${currentLang}/${translateLabels('about.url')}`,
+    class: buttonTransition
   },
   {
-    title: translateLabels("nav.skills"),
-    url: `/${currentLang}/${translateLabels("skills.url")}`,
-    class: buttonTransition,
-  },
+    title: translateLabels('nav.skills'),
+    url: `/${currentLang}/${translateLabels('skills.url')}`,
+    class: buttonTransition
+  }
 ];
 ---
 
 <nav
-  class="fixed h-14 w-screen top:0 z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center dark:text-white text-slate-600 dark:bg-[#121212f0] bg-white/95 tablet:w-screen tablet:h-auto tablet:mx-auto desktop:w-8/12 desktop:self-center desktop:rounded-b-xl desktop:border-transparent"
+  class='fixed h-14 w-screen top:0 z-20 nav-links flex-wrap gap-x-8 flex flex-col align-center justify-center dark:text-white text-slate-600 dark:bg-[#121212f0] bg-white/95 tablet:w-screen tablet:h-auto tablet:mx-auto desktop:w-8/12 desktop:self-center desktop:rounded-b-xl desktop:border-transparent'
 >
-  <div class="flex justify-evenly items-center text-xs py-2 px-2">
+  <div class='flex justify-evenly items-center text-xs py-2 px-2'>
     {
       primaryNavItems.map((link) => (
         <a class={`${link.class}`} href={link.url}>
@@ -49,6 +49,6 @@ const primaryNavItems = [
     }
 
     <LanguageSelector currentLang={currentLang} client:load />
-    <ThemeToggle/>
+    <ThemeToggle />
   </div>
 </nav>
